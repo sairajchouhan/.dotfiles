@@ -38,6 +38,9 @@ return require('packer').startup(function()
   -- git signs
   use 'lewis6991/gitsigns.nvim'
 
+  -- currently doing this for eslint
+  use 'jose-elias-alvarez/null-ls.nvim'
+
 
 
 end)

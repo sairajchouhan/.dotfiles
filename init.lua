@@ -8,6 +8,7 @@ require('sairaj.comment')
 require('sairaj.gitsigns')
 require('sairaj.keymaps')
 require('sairaj.nvim-tree')
+require('sairaj.null-ls')
 
 
 require('lualine').setup()
