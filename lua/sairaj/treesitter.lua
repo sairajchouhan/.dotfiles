@@ -1,14 +1,28 @@
-local configs = require("nvim-treesitter.configs")
+local status, treesitter = pcall(require, "nvim-treesitter.configs")
+if (not status) then 
+  return
+end
 
-configs.setup {
-  ensure_installed = "all",
-  sync_install = false, 
-  ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
+
+treesitter.setup {
+  ensure_installed = {
+    "tsx",
+    "json",
+    "yaml",
+    "css",
+    "html",
+    "lua"
+  },
+  ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
-
+    disable = {}, -- list of language that will be disabled
   },
-  indent = { enable = true, disable = { "yaml" } },
+  indent = { 
+    enable = true,
+    disable = {}
+  },
 }
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
