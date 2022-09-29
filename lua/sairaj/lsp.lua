@@ -1,4 +1,8 @@
-local lspconfig = require('lspconfig')
+local status_ok, lspconfig = pcall(require, "lspconfig")
+
+if(not status_ok) then
+  return
+end
 
 -- for auto complete
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -17,7 +21,16 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
 lspconfig.tsserver.setup{
-	on_attach = function()
+	on_attach = function(client, bufnr)
+
+    if client.server_capabilities.documentFormattingProvider then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = vim.api.nvim_create_augroup("Format", { clear = true }),
+        buffer = bufnr,
+        callback = function() vim.lsp.buf.formatting_seq_sync() end
+      })
+    end
+
     local bufopts = { noremap=true, silent=true, buffer=0 }
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
