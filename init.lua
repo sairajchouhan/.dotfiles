@@ -12,6 +12,8 @@ require('sairaj.nvim-tree')
 require('sairaj.null-ls')
 require('sairaj.lualine')
 require("sairaj.bufferline")
+require("sairaj.prettier")
+
 
 
 require("catppuccin").setup({})
