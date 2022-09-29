@@ -42,6 +42,6 @@ return require('packer').startup(function()
   -- currently doing this for eslint
   use 'jose-elias-alvarez/null-ls.nvim'
 
-
+  use { 'akinsho/bufferline.nvim', tag = "v2.*" }
 
 end)

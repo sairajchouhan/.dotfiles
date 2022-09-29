@@ -11,6 +11,7 @@ require('sairaj.keymaps')
 require('sairaj.nvim-tree')
 require('sairaj.null-ls')
 require('sairaj.lualine')
+require("sairaj.bufferline")
 
 
 require("catppuccin").setup({})
