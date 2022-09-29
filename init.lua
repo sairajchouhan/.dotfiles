@@ -9,9 +9,9 @@ require('sairaj.gitsigns')
 require('sairaj.keymaps')
 require('sairaj.nvim-tree')
 require('sairaj.null-ls')
+require('sairaj.lualine')
 
 
-require('lualine').setup()
 require("catppuccin").setup({})
 
 local g = vim.g
