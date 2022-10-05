@@ -13,6 +13,7 @@ require('sairaj.null-ls')
 require('sairaj.lualine')
 require("sairaj.bufferline")
 require("sairaj.prettier")
+require('sairaj.toggleterm')
 
 
 

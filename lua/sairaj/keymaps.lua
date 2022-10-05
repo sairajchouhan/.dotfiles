@@ -34,4 +34,5 @@ keymap('n', "<leader>dl", "<cmd>lua require('telescope.builtin').diagnostics()<c
 
 
 keymap('n', '<leader>ca', "<cmd>BufferLineCloseLeft<cr> <cmd>BufferLineCloseRight<cr>", opts)
+keymap('n', '<leader>lg', "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
 

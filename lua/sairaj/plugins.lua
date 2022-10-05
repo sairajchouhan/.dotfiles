@@ -44,5 +44,6 @@ return require('packer').startup(function()
   use 'MunifTanjim/prettier.nvim'
 
   use { 'akinsho/bufferline.nvim', tag = "v2.*" }
+  use {"akinsho/toggleterm.nvim" }
 
 end)
