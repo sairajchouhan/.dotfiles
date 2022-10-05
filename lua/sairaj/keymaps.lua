@@ -31,3 +31,7 @@ keymap('n', "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>
 keymap('n', "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap('n', "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 keymap('n', "<leader>dl", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
+
+
+keymap('n', '<leader>ca', "<cmd>BufferLineCloseLeft<cr> <cmd>BufferLineCloseRight<cr>", opts)
+
