@@ -11,13 +11,13 @@ require('sairaj.keymaps')
 require('sairaj.nvim-tree')
 require('sairaj.null-ls')
 require('sairaj.lualine')
-require("sairaj.bufferline")
+-- require("sairaj.bufferline")
 require("sairaj.prettier")
 require('sairaj.toggleterm')
+require('sairaj.colorschemes')
 
 
 
-require("catppuccin").setup({})
 
 local g = vim.g
 local o = vim.opt
@@ -27,7 +27,6 @@ local a = vim.api
 -- kinda global
 g.loaded = 1
 g.loaded_netrwPlugin = 1
-g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 -- options
 o.relativenumber = true
@@ -54,5 +53,4 @@ a.nvim_create_autocmd('TextYankPost', {
 })
 
 
-vim.cmd [[colorscheme catppuccin]]
 
