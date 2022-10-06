@@ -8,7 +8,7 @@ vim.g.maplocalleader = " "
 
 keymap('i', 'jj', '<ESC>', opts)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
-keymap('n', '<leader>w', ':w<CR>', { noremap = true })
+keymap('n', '<leader>w', ':w<CR>', opts)
 -- do not yank
 keymap('n', 'x', '"_x', opts)
 

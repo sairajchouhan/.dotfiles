@@ -1,4 +1,4 @@
-require('sairaj.plugins')
+require('sairaj.plugins') 
 require('sairaj.completions')
 require('sairaj.lsp')
 require('sairaj.treesitter')
@@ -9,13 +9,12 @@ require('sairaj.comment')
 require('sairaj.gitsigns')
 require('sairaj.keymaps')
 require('sairaj.nvim-tree')
-require('sairaj.null-ls')
 require('sairaj.lualine')
--- require("sairaj.bufferline")
 require("sairaj.prettier")
--- require('sairaj.toggleterm')
 require('sairaj.colorschemes')
-
+require('sairaj.toggleterm')
+-- require('sairaj.null-ls')
+-- require("sairaj.bufferline")
 
 
 
@@ -28,7 +27,10 @@ local a = vim.api
 g.loaded = 1
 g.loaded_netrwPlugin = 1
 
+
 -- options
+o.ls = 0
+o.ch = 0
 o.relativenumber = true
 o.cursorline = true
 o.tabstop = 2
@@ -51,6 +53,4 @@ a.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank({ higroup = 'Visual', timeout = 100 })
     end,
 })
-
-
 
