@@ -8,7 +8,6 @@ end
 -- setup
 local icons = require "sairaj.icons"
 local signs = {
-
   { name = "DiagnosticSignError", text = icons.diagnostics.Error },
   { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
   { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },
@@ -62,11 +61,11 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   -- height = 30,
 })
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "rounded",
-  -- width = 60,
-  -- height = 30,
-})
+--[[ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { ]]
+--[[   border = "rounded", ]]
+--[[   -- width = 60, ]]
+--[[   -- height = 30, ]]
+--[[ }) ]]
 
 
 
@@ -83,8 +82,8 @@ for _, lsp in ipairs(servers) do
 end
 
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+--[[ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts) ]]
+--[[ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts) ]]
 
 lspconfig.tsserver.setup{
 	on_attach = function(client, bufnr)
@@ -98,11 +97,11 @@ lspconfig.tsserver.setup{
     end
 
     local bufopts = { noremap=true, silent=true, buffer=0 }
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    --[[ vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts) ]]
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    --[[ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts) ]]
 	end	
 }
 
@@ -119,10 +118,10 @@ lspconfig.svelte.setup{
     end
 
     local bufopts = { noremap=true, silent=true, buffer=0 }
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    --[[ vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts) ]]
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    --[[ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts) ]]
 	end	
 }

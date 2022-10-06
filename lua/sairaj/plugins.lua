@@ -27,6 +27,7 @@ return require('packer').startup(function()
 
   -- lsp
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use { "glepnir/lspsaga.nvim", branch = "main" }
 
 
   -- treesitter
