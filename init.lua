@@ -30,7 +30,7 @@ g.loaded_netrwPlugin = 1
 
 
 -- options
-o.ls = 0
+--[[ o.ls = 0 ]]
 o.ch = 0
 o.relativenumber = true
 o.cursorline = true
@@ -47,11 +47,13 @@ o.numberwidth = 4
 o.ignorecase = true
 o.smartcase = true
 o.signcolumn = "yes"
+o.smartindent = true
+
 
 a.nvim_create_autocmd('TextYankPost', {
     group = num_au,
     callback = function()
-        vim.highlight.on_yank({ higroup = 'Visual', timeout = 100 })
+        vim.highlight.on_yank({ higroup = 'Visual', timeout = 50 })
     end,
 })
 
