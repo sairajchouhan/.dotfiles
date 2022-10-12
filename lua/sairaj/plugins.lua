@@ -1,12 +1,12 @@
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim' -- packer iteself
   use 'kyazdani42/nvim-web-devicons' -- icons in file expolrer
-	use { 'nvim-lualine/lualine.nvim' } -- better 100% lua status line
+	use { 'nvim-lualine/lualine.nvim' } -- lua status line
   use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' } -- file explorer
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs"
-  use 'windwp/nvim-ts-autotag'
+  use "windwp/nvim-autopairs" -- complets ( => ()
+  use 'windwp/nvim-ts-autotag' -- auto close tags and auto rename tags
 
 
   -- color schemes
@@ -25,31 +25,37 @@ return require('packer').startup(function()
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- lsp
+  -- heavy features
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use { "glepnir/lspsaga.nvim", branch = "main" }
-
-
-  -- treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } 
-
-  -- telescope
-  use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
-
-  -- comments
-  use { "numToStr/Comment.nvim" }
-  use { "JoosepAlviste/nvim-ts-context-commentstring" }
-
-  -- git signs
-  use 'lewis6991/gitsigns.nvim'
-
-  -- currently doing this for eslint
+  use { "williamboman/mason.nvim" }
+  use { "williamboman/mason-lspconfig.nvim" }
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'MunifTanjim/prettier.nvim'
 
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- treesitter
+  use "nvim-telescope/telescope.nvim" -- telescope
+  use { "numToStr/Comment.nvim" } -- comment plugin
+  use { "JoosepAlviste/nvim-ts-context-commentstring" } -- ts context aware commenting
+
+  use 'lewis6991/gitsigns.nvim'
   use { 'akinsho/bufferline.nvim', tag = "v2.*" }
   use {"akinsho/toggleterm.nvim" }
   use "folke/which-key.nvim"
 
+
 end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

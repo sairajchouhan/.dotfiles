@@ -14,8 +14,8 @@ require('sairaj.colorschemes')
 require('sairaj.toggleterm')
 require('sairaj.lspsaga')
 require('sairaj.null-ls')
+require("sairaj.mason")
 -- require("sairaj.bufferline")
--- require("sairaj.prettier")
 
 
 
