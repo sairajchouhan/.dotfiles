@@ -13,7 +13,7 @@ end
 
 mason.setup{}
 mason_lsp_config.setup{
-  ensure_installed = {'tailwindcss', 'rust_analyzer' },
+  ensure_installed = { 'tailwindcss' },
 }
 
 
