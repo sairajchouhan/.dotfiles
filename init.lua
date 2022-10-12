@@ -13,7 +13,7 @@ require('sairaj.lualine')
 require('sairaj.colorschemes')
 require('sairaj.toggleterm')
 require('sairaj.lspsaga')
--- require('sairaj.null-ls')
+require('sairaj.null-ls')
 -- require("sairaj.bufferline")
 -- require("sairaj.prettier")
 
