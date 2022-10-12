@@ -20,6 +20,12 @@ keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- lsp rename
 
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- hover doc
 
+-- Show line diagnostics
+keymap("n", ";d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+
+-- Show cursor diagnostic
+--[[ keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) ]]
+
 -- go to next and prev diagnostics
 keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
