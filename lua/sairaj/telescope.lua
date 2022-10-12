@@ -25,7 +25,17 @@ telescope.setup {
         prompt_position = "top",
       },
     },
-    -- Default configuration for builtin pickers goes here:
+    diagnostics = {
+      theme = "dropdown",
+      previewer = false,
+      layout_config = {
+        prompt_position = "top",
+        width = 0.75,
+        height = 0.75,
+      },
+    },
+
+   -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
     --   ...
