@@ -5,8 +5,4 @@ if not status_ok then
 end
 
 
-lualine.setup{
-  options = {
-    icons_enabled = true,
-  }
-}
+lualine.setup{}
