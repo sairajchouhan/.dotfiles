@@ -10,12 +10,12 @@ require('sairaj.gitsigns')
 require('sairaj.keymaps')
 require('sairaj.nvim-tree')
 require('sairaj.lualine')
-require("sairaj.prettier")
 require('sairaj.colorschemes')
 require('sairaj.toggleterm')
 require('sairaj.lspsaga')
 -- require('sairaj.null-ls')
 -- require("sairaj.bufferline")
+-- require("sairaj.prettier")
 
 
 

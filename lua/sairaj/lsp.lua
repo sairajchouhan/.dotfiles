@@ -70,7 +70,7 @@ for _, lsp in ipairs(servers) do
         vim.api.nvim_create_autocmd("BufWritePre", {
           group = vim.api.nvim_create_augroup("Format", { clear = true }),
           buffer = bufnr,
-          callback = function() vim.lsp.buf.formatting_seq_sync() end
+          callback = function() vim.lsp.buf.format() end
         })
       end
 
