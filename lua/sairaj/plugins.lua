@@ -41,6 +41,7 @@ return require('packer').startup(function()
   use { 'akinsho/bufferline.nvim', tag = "v2.*" }
   use {"akinsho/toggleterm.nvim" }
   use "folke/which-key.nvim"
+  use 'norcalli/nvim-colorizer.lua'
 
 
 end)
