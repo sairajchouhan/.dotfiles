@@ -9,8 +9,9 @@ vim.g.maplocalleader = " "
 keymap('i', 'jj', '<ESC>', opts)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>w', ':w<CR>', opts)
--- do not yank
-keymap('n', 'x', '"_x', opts)
+
+keymap('n', 'x', '"_x', opts) -- do not yank on x
+keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
 
 -- navigating between splits
