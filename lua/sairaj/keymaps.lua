@@ -33,6 +33,16 @@ keymap('n', "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>
 keymap('n', "<leader>dl", "<cmd>lua require('telescope.builtin').diagnostics()<cr>", opts)
 
 
-keymap('n', '<leader>ca', "<cmd>BufferLineCloseLeft<cr> <cmd>BufferLineCloseRight<cr>", opts)
+-- opens a lazygit popup
 keymap('n', '<leader>lg', "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
+
+
+
+-- buffer line
+--[[ keymap('n', '<leader>c', "<cmd>BufferLineCloseLeft<cr> <cmd>BufferLineCloseRight<cr>", opts) ]]
+--[[ vim.keymap.set('n', '<S-]>', '<Cmd>BufferLineCycleNext<CR>', {}) ]]
+--[[ vim.keymap.set('n', '<S-[>', '<Cmd>BufferLineCyclePrev<CR>', {}) ]]
+
+
+
 

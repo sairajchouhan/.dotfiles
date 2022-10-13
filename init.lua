@@ -16,7 +16,7 @@ require('sairaj.lspsaga')
 require('sairaj.null-ls')
 require("sairaj.mason")
 require("sairaj.colorizer")
--- require("sairaj.bufferline")
+require("sairaj.bufferline")
 
 
 
