@@ -12,6 +12,7 @@ keymap('n', '<leader>w', ':w<CR>', opts)
 
 keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
+keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) -- remove the serach highlight 
 
 
 -- navigating between splits

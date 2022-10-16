@@ -18,5 +18,4 @@ mason_lsp_config.setup{
 
 
 require('lspconfig').tailwindcss.setup{}
-require('lspconfig').rust_analyzer.setup{}
 

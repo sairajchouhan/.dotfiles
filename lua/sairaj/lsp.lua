@@ -59,7 +59,7 @@ vim.diagnostic.config(config)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local servers = { 'tsserver', 'svelte' }
+local servers = { 'tsserver', 'svelte', 'gopls' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
