@@ -42,8 +42,8 @@ keymap('n', '<leader>lg', "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
 
 -- buffer line
 --[[ keymap('n', '<leader>c', "<cmd>BufferLineCloseLeft<cr> <cmd>BufferLineCloseRight<cr>", opts) ]]
---[[ vim.keymap.set('n', '<S-]>', '<Cmd>BufferLineCycleNext<CR>', {}) ]]
---[[ vim.keymap.set('n', '<S-[>', '<Cmd>BufferLineCyclePrev<CR>', {}) ]]
+keymap('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', opts)
+keymap('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', opts)
 
 
 
