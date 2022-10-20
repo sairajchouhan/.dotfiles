@@ -76,3 +76,8 @@ if is_windows then
   vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 end
 
+
+-- this is required for deno lsp to work for some reason
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}

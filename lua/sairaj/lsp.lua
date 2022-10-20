@@ -57,19 +57,33 @@ vim.diagnostic.config(config)
 
 -- for auto complete
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer' }
+local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols' }
 
 for _, lsp in ipairs(servers) do
+
+  local root_dir;
+
+  if lsp == 'denols' then
+    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
+  end
+
+  if lsp == 'tsserver' then
+    root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")
+  end
+
+
   lspconfig[lsp].setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
+      local lsp_formating_group = vim.api.nvim_create_augroup("LspFormatting", {})
 
       -- format on save
       if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_clear_autocmds { buffer = 0, group = lsp_formating_group  }
         vim.api.nvim_create_autocmd("BufWritePre", {
-          group = vim.api.nvim_create_augroup("Format", { clear = true }),
+          group = lsp_formating_group,
           buffer = bufnr,
           callback = function() vim.lsp.buf.format() end
         })
@@ -79,7 +93,8 @@ for _, lsp in ipairs(servers) do
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
       vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    end	
+    end,
+    root_dir = root_dir,
   }
 end
 
