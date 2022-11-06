@@ -46,5 +46,5 @@ keymap('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', opts)
 keymap('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', opts)
 
 
-
-
+-- lsp format
+keymap('n', '<S-f>', '<Cmd>lua vim.lsp.buf.format()<CR> <Cmd>w<CR>', opts)

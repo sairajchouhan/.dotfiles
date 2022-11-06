@@ -59,7 +59,7 @@ vim.diagnostic.config(config)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols' }
+local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols'}
 
 for _, lsp in ipairs(servers) do
 
@@ -80,14 +80,14 @@ for _, lsp in ipairs(servers) do
       local lsp_formating_group = vim.api.nvim_create_augroup("LspFormatting", {})
 
       -- format on save
-      if client.server_capabilities.documentFormattingProvider then
-        vim.api.nvim_clear_autocmds { buffer = 0, group = lsp_formating_group  }
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          group = lsp_formating_group,
-          buffer = bufnr,
-          callback = function() vim.lsp.buf.format() end
-        })
-      end
+      --[[ if client.server_capabilities.documentFormattingProvider then ]]
+      --[[   vim.api.nvim_clear_autocmds { buffer = 0, group = lsp_formating_group  } ]]
+      --[[   vim.api.nvim_create_autocmd("BufWritePre", { ]]
+      --[[     group = lsp_formating_group, ]]
+      --[[     buffer = bufnr, ]]
+      --[[     callback = function() vim.lsp.buf.format() end ]]
+      --[[   }) ]]
+      --[[ end ]]
 
       local bufopts = { noremap=true, silent=true, buffer=0 }
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -97,4 +97,10 @@ for _, lsp in ipairs(servers) do
     root_dir = root_dir,
   }
 end
+
+lspconfig.eslint.setup{
+  autostart = false,
+}
+
+
 
