@@ -30,14 +30,15 @@ return require('packer').startup(function()
   use { "glepnir/lspsaga.nvim", branch = "main" }
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "simrat39/rust-tools.nvim"
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- treesitter
   use "nvim-telescope/telescope.nvim" -- telescope
   use { "numToStr/Comment.nvim" } -- comment plugin
   use { "JoosepAlviste/nvim-ts-context-commentstring" } -- ts context aware commenting
 
-  use 'lewis6991/gitsigns.nvim'
+  use {'lewis6991/gitsigns.nvim', commit = "851cd32caaea84f303c4fdf51d72dfa5fcd795bb"}
   use { 'akinsho/bufferline.nvim', tag = "v2.*" }
   use {"akinsho/toggleterm.nvim" }
   use "folke/which-key.nvim"

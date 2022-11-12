@@ -9,7 +9,10 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 lspsaga.init_lsp_saga({
-  border_style = "rounded",	
+  border_style = "rounded",
+  code_action_lightbulb = {
+    virtual_text = false,
+  },
 })
 
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts) -- preview definition, implementations, references
@@ -24,7 +27,7 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- hover doc
 keymap("n", ";d", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 
 -- Show cursor diagnostic
---[[ keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) ]]
+keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
 
 -- go to next and prev diagnostics
 keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)

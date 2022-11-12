@@ -20,8 +20,8 @@ end
 
 local config = {
   -- disable virtual text
-  virtual_lines = false,
-  virtual_text = false,
+  virtual_lines = true,
+  virtual_text = true,
   --[[ virtual_text = { ]]
   --[[   -- spacing = 7, ]]
   --[[   -- update_in_insert = false, ]]
@@ -62,8 +62,9 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols'}
 
 for _, lsp in ipairs(servers) do
-
   local root_dir;
+
+
 
   if lsp == 'denols' then
     root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
@@ -73,22 +74,35 @@ for _, lsp in ipairs(servers) do
     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")
   end
 
+  if lsp == 'rust_analyzer' then
+    --[[ local opts = { ]]
+    --[[   tools = { ]]
+    --[[     runnables = { ]]
+    --[[       use_telescope = true, ]]
+    --[[     }, ]]
+    --[[     inlay_hints = { ]]
+    --[[       auto = true, ]]
+    --[[       show_parameter_hints = false, ]]
+    --[[       parameter_hints_prefix = "", ]]
+    --[[       other_hints_prefix = "", ]]
+    --[[     }, ]]
+    --[[   }, ]]
+    --[[   server = { ]]
+    --[[     on_attach = function(client, bufnr) ]]
+    --[[       local bufopts = { noremap=true, silent=true, buffer=0 } ]]
+    --[[       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts) ]]
+    --[[       vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts) ]]
+    --[[       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts) ]]
+    --[[     end, ]]
+    --[[   } ]]
+    --[[ } ]]
+    --[[ require("rust-tools").setup(opts) ]]
+    --[[ return ]]
+  end
 
   lspconfig[lsp].setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-      local lsp_formating_group = vim.api.nvim_create_augroup("LspFormatting", {})
-
-      -- format on save
-      --[[ if client.server_capabilities.documentFormattingProvider then ]]
-      --[[   vim.api.nvim_clear_autocmds { buffer = 0, group = lsp_formating_group  } ]]
-      --[[   vim.api.nvim_create_autocmd("BufWritePre", { ]]
-      --[[     group = lsp_formating_group, ]]
-      --[[     buffer = bufnr, ]]
-      --[[     callback = function() vim.lsp.buf.format() end ]]
-      --[[   }) ]]
-      --[[ end ]]
-
       local bufopts = { noremap=true, silent=true, buffer=0 }
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
       vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
@@ -104,3 +118,28 @@ lspconfig.eslint.setup{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- format on save
+--[[ local lsp_formating_group = vim.api.nvim_create_augroup("LspFormatting", {}) ]]
+--[[ if client.server_capabilities.documentFormattingProvider then ]]
+--[[   vim.api.nvim_clear_autocmds { buffer = 0, group = lsp_formating_group  } ]]
+--[[   vim.api.nvim_create_autocmd("BufWritePre", { ]]
+--[[     group = lsp_formating_group, ]]
+--[[     buffer = bufnr, ]]
+--[[     callback = function() vim.lsp.buf.format() end ]]
+--[[   }) ]]
+--[[ end ]]
