@@ -31,7 +31,7 @@ g.loaded_netrwPlugin = 1
 
 
 -- options
-o.ls = 0
+--[[ o.ls = 1 ]]
 o.ch = 0
 o.relativenumber = true
 o.cursorline = true
