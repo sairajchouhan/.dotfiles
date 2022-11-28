@@ -45,6 +45,11 @@ return require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
 
 
+  -- themes
+  use "EdenEast/nightfox.nvim" 
+  use "olimorris/onedarkpro.nvim"   
+
+
 end)
 
 

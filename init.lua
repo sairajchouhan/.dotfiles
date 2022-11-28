@@ -1,3 +1,9 @@
+local g = vim.g
+local o = vim.opt
+local a = vim.api
+
+o.termguicolors = true
+
 require('sairaj.plugins') 
 require('sairaj.completions')
 require('sairaj.lsp')
@@ -20,9 +26,6 @@ require("sairaj.bufferline")
 
 
 
-local g = vim.g
-local o = vim.opt
-local a = vim.api
 
 
 -- kinda global
@@ -43,7 +46,6 @@ o.mouse = "a"
 o.fileencoding = 'utf-8'
 o.swapfile = false
 -- o.timeoutlen = 200
-o.termguicolors = true
 o.numberwidth = 4
 o.ignorecase = true
 o.smartcase = true
