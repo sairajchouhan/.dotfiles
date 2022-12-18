@@ -36,6 +36,7 @@ g.loaded_netrwPlugin = 1
 -- options
 --[[ o.ls = 1 ]]
 o.ch = 0
+o.number = true
 o.relativenumber = true
 o.cursorline = true
 o.tabstop = 2

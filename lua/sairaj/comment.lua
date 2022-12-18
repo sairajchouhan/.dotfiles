@@ -8,6 +8,7 @@ comment.setup {
     local U = require "Comment.utils"
 
     local location = nil
+
     if ctx.ctype == U.ctype.block then
       location = require("ts_context_commentstring.utils").get_cursor_location()
     elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then

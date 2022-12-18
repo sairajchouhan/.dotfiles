@@ -15,6 +15,11 @@ keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) -- remove the serach highlight 
 
 
+keymap('n', '<C-d>' , '<C-d>zz', opts) 
+keymap('n', '<C-u>' , '<C-u>zz', opts) 
+keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) 
+
+
 -- navigating between splits
 keymap('n', "<C-h>", "<C-w>h", opts)
 keymap('n', "<C-j>", "<C-w>j", opts)
