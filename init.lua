@@ -4,7 +4,7 @@ local a = vim.api
 
 o.termguicolors = true
 
-require('sairaj.plugins') 
+require('sairaj.plugins')
 require('sairaj.completions')
 require('sairaj.lsp')
 require('sairaj.treesitter')
@@ -54,13 +54,16 @@ o.signcolumn = "yes"
 o.smartindent = true
 
 
-a.nvim_create_autocmd('TextYankPost', {
-    group = num_au,
-    callback = function()
-        vim.highlight.on_yank({ higroup = 'Visual', timeout = 50 })
-    end,
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank({
+      timeout = 30
+    })
+  end,
+  group = highlight_group,
+  pattern = '*',
 })
-
 
 local has = function(x)
   return vim.fn.has(x) == 1
@@ -68,7 +71,7 @@ end
 
 
 local is_mac = has "macunix"
-local is_windows = has "win32" 
+local is_windows = has "win32"
 
 
 if is_mac then

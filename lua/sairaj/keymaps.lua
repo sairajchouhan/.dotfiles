@@ -15,8 +15,10 @@ keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) -- remove the serach highlight 
 
 
+-- zzzzzzzzzzz maps
 keymap('n', '<C-d>' , '<C-d>zz', opts) 
 keymap('n', '<C-u>' , '<C-u>zz', opts) 
+
 keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) 
 
 

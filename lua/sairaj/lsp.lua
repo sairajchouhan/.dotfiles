@@ -1,6 +1,6 @@
 local status_ok, lspconfig = pcall(require, "lspconfig")
 
-if(not status_ok) then
+if (not status_ok) then
   return
 end
 
@@ -59,11 +59,10 @@ vim.diagnostic.config(config)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols'}
+local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols', 'sumneko_lua' }
 
 for _, lsp in ipairs(servers) do
   local root_dir;
-
 
 
   if lsp == 'denols' then
@@ -74,46 +73,27 @@ for _, lsp in ipairs(servers) do
     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")
   end
 
-  if lsp == 'rust_analyzer' then
-    --[[ local opts = { ]]
-    --[[   tools = { ]]
-    --[[     runnables = { ]]
-    --[[       use_telescope = true, ]]
-    --[[     }, ]]
-    --[[     inlay_hints = { ]]
-    --[[       auto = true, ]]
-    --[[       show_parameter_hints = false, ]]
-    --[[       parameter_hints_prefix = "", ]]
-    --[[       other_hints_prefix = "", ]]
-    --[[     }, ]]
-    --[[   }, ]]
-    --[[   server = { ]]
-    --[[     on_attach = function(client, bufnr) ]]
-    --[[       local bufopts = { noremap=true, silent=true, buffer=0 } ]]
-    --[[       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts) ]]
-    --[[       vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts) ]]
-    --[[       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts) ]]
-    --[[     end, ]]
-    --[[   } ]]
-    --[[ } ]]
-    --[[ require("rust-tools").setup(opts) ]]
-    --[[ return ]]
-  end
-
   lspconfig[lsp].setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
-      local bufopts = { noremap=true, silent=true, buffer=0 }
+      local bufopts = { noremap = true, silent = true, buffer = 0 }
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
       vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     end,
     root_dir = root_dir,
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {'vim'}
+        }
+      }
+    }
   }
 end
 
-lspconfig.eslint.setup{
-  autostart = false,
+lspconfig.eslint.setup {
+  autostart = true,
 }
 
 
