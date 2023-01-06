@@ -59,7 +59,7 @@ vim.diagnostic.config(config)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols', 'sumneko_lua' }
+local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols', 'sumneko_lua', 'clangd' }
 
 for _, lsp in ipairs(servers) do
   local root_dir;

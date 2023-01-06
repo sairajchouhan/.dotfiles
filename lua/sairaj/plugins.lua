@@ -1,7 +1,7 @@
 return require('packer').startup(function()
-	use 'wbthomason/packer.nvim' -- packer iteself
+  use 'wbthomason/packer.nvim' -- packer iteself
   use 'kyazdani42/nvim-web-devicons' -- icons in file expolrer
-	use { 'nvim-lualine/lualine.nvim' } -- lua status line
+  use { 'nvim-lualine/lualine.nvim' } -- lua status line
   use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' } -- file explorer
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -10,10 +10,10 @@ return require('packer').startup(function()
 
 
   -- color schemes
-	use { 'catppuccin/nvim', as = 'catppuccin' } -- color theme
+  use { 'catppuccin/nvim', as = 'catppuccin' } -- color theme
   use 'folke/tokyonight.nvim'
-  
-    -- cmp plugins
+
+  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -38,17 +38,24 @@ return require('packer').startup(function()
   use { "numToStr/Comment.nvim" } -- comment plugin
   use { "JoosepAlviste/nvim-ts-context-commentstring" } -- ts context aware commenting
 
-  use {'lewis6991/gitsigns.nvim', commit = "851cd32caaea84f303c4fdf51d72dfa5fcd795bb"}
+  use { 'lewis6991/gitsigns.nvim', commit = "851cd32caaea84f303c4fdf51d72dfa5fcd795bb" }
   use { 'akinsho/bufferline.nvim', tag = "v2.*" }
-  use {"akinsho/toggleterm.nvim" }
+  use { "akinsho/toggleterm.nvim" }
   use "folke/which-key.nvim"
   use 'norcalli/nvim-colorizer.lua'
+  -- Lua
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {}
+    end
+  }
 
 
   -- themes
-  use "EdenEast/nightfox.nvim" 
-  use "olimorris/onedarkpro.nvim"   
+  use "EdenEast/nightfox.nvim"
+  use "olimorris/onedarkpro.nvim"
 
 
 end)
-
