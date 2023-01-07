@@ -56,6 +56,5 @@ return require('packer').startup(function()
   -- themes
   use "EdenEast/nightfox.nvim"
   use "olimorris/onedarkpro.nvim"
-
-
+  use 'APZelos/blamer.nvim'
 end)

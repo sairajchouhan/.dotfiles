@@ -1,6 +1,5 @@
 local g = vim.g
 local o = vim.opt
-local a = vim.api
 
 o.termguicolors = true
 
@@ -23,8 +22,6 @@ require('sairaj.null-ls')
 require("sairaj.mason")
 require("sairaj.colorizer")
 require("sairaj.bufferline")
-
-
 
 
 

@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["blamer.nvim"] = {
+    loaded = true,
+    path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/blamer.nvim",
+    url = "https://github.com/APZelos/blamer.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
