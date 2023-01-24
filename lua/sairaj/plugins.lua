@@ -52,9 +52,13 @@ return require('packer').startup(function()
     end
   }
 
+  --[[ use 'nvim-treesitter/nvim-treesitter-context' ]]
+  use 'APZelos/blamer.nvim'
 
   -- themes
   use "EdenEast/nightfox.nvim"
   use "olimorris/onedarkpro.nvim"
-  use 'APZelos/blamer.nvim'
+  use({"roobert/tailwindcss-colorizer-cmp.nvim"})
+  use "github/copilot.vim"
+
 end)

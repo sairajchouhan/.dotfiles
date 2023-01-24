@@ -234,6 +234,11 @@ _G.packer_plugins = {
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  ["tailwindcss-colorizer-cmp.nvim"] = {
+    loaded = true,
+    path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/tailwindcss-colorizer-cmp.nvim",
+    url = "https://github.com/roobert/tailwindcss-colorizer-cmp.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/telescope.nvim",
