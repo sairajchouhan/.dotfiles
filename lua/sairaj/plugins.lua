@@ -58,7 +58,10 @@ return require('packer').startup(function()
   -- themes
   use "EdenEast/nightfox.nvim"
   use "olimorris/onedarkpro.nvim"
-  use({"roobert/tailwindcss-colorizer-cmp.nvim"})
+  use 'rose-pine/neovim'
+
+  use({ "roobert/tailwindcss-colorizer-cmp.nvim" })
   use "github/copilot.vim"
+  use "b0o/schemastore.nvim"
 
 end)

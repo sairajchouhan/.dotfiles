@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  neovim = {
+    loaded = true,
+    path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["nightfox.nvim"] = {
     loaded = true,
@@ -233,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["schemastore.nvim"] = {
+    loaded = true,
+    path = "/Users/sairaj/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
+    url = "https://github.com/b0o/schemastore.nvim"
   },
   ["tailwindcss-colorizer-cmp.nvim"] = {
     loaded = true,

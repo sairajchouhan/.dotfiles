@@ -59,7 +59,7 @@ vim.diagnostic.config(config)
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols', 'sumneko_lua', 'clangd' }
+local servers = { 'tsserver', 'svelte', 'gopls', 'rust_analyzer', 'denols', 'sumneko_lua', 'clangd', "cssls", "html" }
 
 for _, lsp in ipairs(servers) do
   local root_dir;
@@ -85,7 +85,7 @@ for _, lsp in ipairs(servers) do
     settings = {
       Lua = {
         diagnostics = {
-          globals = {'vim'}
+          globals = { 'vim' }
         }
       }
     }
@@ -93,19 +93,33 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.eslint.setup {
-  autostart = true,
+  autostart = false,
 }
 
+lspconfig.tailwindcss.setup({
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        classRegex = {
+          "cva\\(([^)]*)\\)",
+          "[\"'`]([^\"'`]*).*?[\"'`]",
+        },
+      },
+    },
+  },
+})
 
 
 
 
-
-
-
-
-
-
+lspconfig.jsonls.setup {
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
 
 
 
