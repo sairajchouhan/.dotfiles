@@ -179,6 +179,11 @@ _G.packer_plugins = {
     path = "/Users/sairaj.chouhan/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/sairaj.chouhan/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/sairaj.chouhan/.local/share/nvim/site/pack/packer/start/vim-fugitive",

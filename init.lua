@@ -49,6 +49,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use 'shaunsingh/nord.nvim' -- Theme
+  use 'folke/tokyonight.nvim'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -122,7 +123,7 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme nord]]
+vim.cmd [[colorscheme tokyonight]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -154,12 +155,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+
+require("tokyonight").setup({
+  style = "night", -- `storm`, `moon`, a darker variant `night` and `day`
+})
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    theme = 'tokyonight',
     component_separators = '|',
     section_separators = '',
   },
