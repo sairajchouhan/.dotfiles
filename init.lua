@@ -95,6 +95,10 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
+require("tokyonight").setup({
+  style = "night", -- `storm`, `moon`, a darker variant `night` and `day`
+})
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -128,8 +132,7 @@ vim.cmd [[colorscheme tokyonight]]
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- [[ Basic Keymaps ]]
--- Set <space> as the leader key
+-- [[ Basic Keymaps ]] Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -149,16 +152,15 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank({
+      timeout = 30
+    })
   end,
   group = highlight_group,
   pattern = '*',
 })
 
 
-require("tokyonight").setup({
-  style = "night", -- `storm`, `moon`, a darker variant `night` and `day`
-})
 
 -- Set lualine as statusline
 -- See `:help lualine.txt`
@@ -197,6 +199,10 @@ require('gitsigns').setup {
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    sorting_strategy = "ascending",
+    layout_config = {
+      prompt_position = "top"
+    },
     mappings = {
       i = {
         ['<C-u>'] = false,
