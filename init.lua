@@ -82,7 +82,7 @@ require('lazy').setup({
     opts = {
       style = "night"
     },
-    init = function ()
+    init = function()
       vim.cmd.colorscheme 'tokyonight'
     end
   },
@@ -144,6 +144,7 @@ require('lazy').setup({
   },
   {
     'nvim-tree/nvim-tree.lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = true
   },
 
