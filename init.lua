@@ -3,6 +3,8 @@
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -137,7 +139,11 @@ require('lazy').setup({
     end,
   },
   {
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
+    config = true
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
     config = true
   },
 
@@ -155,7 +161,7 @@ require('lazy').setup({
   --
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
-  { import = 'custom.plugins' },
+  -- { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -467,6 +473,14 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-------------- MY REMAPS --------------------
+
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+
+-----------------------------------------
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
