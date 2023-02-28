@@ -1,3 +1,5 @@
+require('sairaj')
+print('hello world')
 --Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -152,7 +154,7 @@ require('lazy').setup({
     event = "BufRead",
     config = function()
       require("lspsaga").setup({
-        code_action_lightbulb = {
+        lightbulb = {
           virtual_text = false,
         },
       })
