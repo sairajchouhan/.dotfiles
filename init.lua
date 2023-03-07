@@ -157,6 +157,9 @@ require('lazy').setup({
         lightbulb = {
           virtual_text = false,
         },
+        symbol_in_winbar = {
+          enable = false
+        }
       })
     end,
   }
