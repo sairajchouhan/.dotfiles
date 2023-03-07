@@ -185,7 +185,7 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -196,7 +196,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -519,6 +519,7 @@ cmp.setup {
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts)
 
 -- navigating between splits
 keymap('n', "<C-h>", "<C-w>h", opts)
@@ -531,7 +532,7 @@ keymap("n", "<C-S-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts)
--- keymap('n', 'x', '"_x', opts) -- do not yank on x
+
 -- keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 -- keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) -- remove the serach highlight
 -----------------------------------------
