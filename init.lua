@@ -142,7 +142,11 @@ require('lazy').setup({
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = true
+    opts = {
+      git = {
+        ignore = false
+      }
+    }
   },
   {
     "glepnir/lspsaga.nvim",
