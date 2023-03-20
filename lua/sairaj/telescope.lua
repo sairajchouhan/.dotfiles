@@ -6,9 +6,11 @@ require('telescope').setup {
     },
     mappings = {
       i = {
-            ['<C-u>'] = false,
-            ['<C-d>'] = false,
+        ["<C-c>"] = { "<esc>", type = "command" }
       },
+      n = {
+        ["<C-c>"] = require('telescope.actions').close
+      }
     },
   },
   pickers = {
