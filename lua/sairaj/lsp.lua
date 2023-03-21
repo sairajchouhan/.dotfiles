@@ -73,6 +73,12 @@ local on_attach = function(_, bufnr)
     vim.cmd("normal! zz")
   end, "Go to previous error diagnostic")
 
+
+  nmap("F", function()
+    vim.lsp.buf.format()
+    vim.cmd("w");
+  end)
+
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()

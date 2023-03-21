@@ -251,9 +251,18 @@ keymap("n", "<C-S-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts)
 
+-- move lines up and down
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+
+-- search terms stay in middle of screen
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
 -- keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 -- keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) -- remove the serach highlight
 -----------------------------------------
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
