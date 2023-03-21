@@ -39,25 +39,38 @@ local on_attach = function(_, bufnr)
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gd', function()
+    vim.lsp.buf.definition();
+    vim.cmd("normal! zz")
+  end, '[G]oto [D]efinition')
+
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-S-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-  nmap("[d", vim.diagnostic.goto_prev, "Go to next diagnostic")
-  nmap("]d", vim.diagnostic.goto_next, "Go to previous diagnostic")
+  nmap("[d", function()
+    vim.diagnostic.goto_prev();
+    vim.cmd("normal! zz")
+  end, "Go to next diagnostic")
+
+  nmap("]d", function()
+    vim.diagnostic.goto_next();
+    vim.cmd("normal! zz")
+  end, "Go to previous diagnostic")
 
   nmap("[e", function()
     vim.diagnostic.goto_prev({
       severity = vim.diagnostic.severity.ERROR
     })
+    vim.cmd("normal! zz")
   end, "Go to next error diagnostic")
 
   nmap("]e", function()
     vim.diagnostic.goto_next({
       severity = vim.diagnostic.severity.ERROR
     })
+    vim.cmd("normal! zz")
   end, "Go to previous error diagnostic")
 
   ------------------- Lesser used LSP functionality personally --------------------------------------
