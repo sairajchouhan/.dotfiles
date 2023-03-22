@@ -123,6 +123,21 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+
+    if server_name == "rust_analyzer" then
+      local rt = require("rust-tools")
+
+      rt.setup({
+        server = {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          settings = servers[server_name],
+        },
+      })
+
+      return
+    end
+
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,

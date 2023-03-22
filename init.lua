@@ -134,6 +134,7 @@ require('lazy').setup({
       }
     }
   },
+  { "simrat39/rust-tools.nvim" }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -161,10 +162,13 @@ vim.o.relativenumber = true
 
 -- tabs magic
 vim.o.tabstop = 2
+vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smarttab = true
+vim.o.smartindent = true
 
+vim.o.scrolloff = 8
 -- Set highlight on search
 vim.o.hlsearch = true
 
