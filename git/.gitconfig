@@ -14,9 +14,6 @@
 [diff]
     colorMoved = default
 
-[includeIf "gitdir:~/dotfile_github/"] 
-    path = ~/mine/.gitconfig
-
 [includeIf "gitdir:~/mine/"] 
     path = ~/mine/.gitconfig
 
