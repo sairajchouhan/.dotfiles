@@ -17,6 +17,7 @@ alias rm="trash"
 alias lg="lazygit"
 alias ":w"="echo \"bro what are you doing?\""
 alias gcm="git commit -m"
+alias dot="cd ~/.dotfiles"
 
 
 
