@@ -7,6 +7,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
+alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 alias z="nvim ~/.zshrc"
 alias s="source ~/.zshrc"
 alias n="nvim ."
