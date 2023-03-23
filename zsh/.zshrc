@@ -7,18 +7,23 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
-alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
+alias ":w"="echo \"bro what are you doing?\""
+
 alias z="nvim ~/.zshrc"
 alias s="source ~/.zshrc"
 alias n="nvim ."
-alias mine="cd ~/mine"
+
 alias cs="cd ~/cs"
-alias cat="bat --paging=never"
 alias rm="trash"
 alias lg="lazygit"
-alias ":w"="echo \"bro what are you doing?\""
+
+alias cat="bat --paging=never"
 alias gcm="git commit -m"
 alias dot="cd ~/.dotfiles"
+
+alias mine="cd ~/mine"
+alias mdkir="mkdir"
+alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 
 
 
