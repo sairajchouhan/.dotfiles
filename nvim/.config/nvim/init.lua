@@ -232,6 +232,8 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+vim.o.swapfile = false -- get'em out
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
