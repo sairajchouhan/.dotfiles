@@ -73,7 +73,7 @@ local on_attach = function(_, bufnr)
     vim.cmd("normal! zz")
   end, "Go to previous error diagnostic")
 
-  nmap("ld", function()
+  nmap(";d", function()
     vim.diagnostic.open_float({
       scope = "line",
     })
