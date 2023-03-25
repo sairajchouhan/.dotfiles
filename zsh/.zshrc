@@ -13,6 +13,7 @@ alias z="nvim ~/.zshrc"
 alias s="source ~/.zshrc"
 alias n="nvim ."
 
+alias "??"="github-copilot-cli what-the-shell"
 alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
