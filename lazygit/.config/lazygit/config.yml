@@ -3,4 +3,9 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
+  # openCommand: 'nvim {{filename}}'
+
 notARepository: 'quit'
