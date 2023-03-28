@@ -7,11 +7,21 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 
+function t(){
+  if tmux ls | cut -d ":" -f 1 | grep $(pwd | xargs basename | tr . -) > /dev/null; then
+    tmux attach -t $(pwd | xargs basename | tr . -)
+  else
+    tmux new -s $(pwd | xargs basename | tr . -)
+  fi
+}
+
+
 alias ":w"="echo \"bro what are you doing?\""
 
 alias z="nvim ~/.zshrc"
 alias s="source ~/.zshrc"
 alias n="nvim ."
+
 
 alias "??"="github-copilot-cli what-the-shell"
 alias cs="cd ~/cs"

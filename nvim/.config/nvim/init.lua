@@ -23,7 +23,6 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
   "github/copilot.vim",
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -136,11 +135,20 @@ require('lazy').setup({
     config = true
   },
   {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end
+  },
+  {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       git = {
         ignore = false
+      },
+      update_focused_file = {
+        enable = true,
       },
       renderer = {
         icons = {
