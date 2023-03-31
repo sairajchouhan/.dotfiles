@@ -306,8 +306,9 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
--- keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
--- keymap('n', '<cr>' , '<cmd>noh<cr><cr>', opts) -- remove the serach highlight
+keymap('n', 'x', '"_x', opts) -- do not yank on x
+keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
+
 -----------------------------------------
 
 -- The line beneath this is called `modeline`. See `:help modeline`
