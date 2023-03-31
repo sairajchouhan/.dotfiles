@@ -130,16 +130,24 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
+
   {
     'windwp/nvim-autopairs',
     config = true
   },
+
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
     end
   },
+
+  {
+    "folke/todo-comments.nvim",
+    opts = {}
+  },
+
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
