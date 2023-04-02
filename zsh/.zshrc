@@ -1,11 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="cloud"
-
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
 
 function t(){
   if tmux ls | cut -d ":" -f 1 | grep $(pwd | xargs basename | tr . -) > /dev/null; then
@@ -54,6 +51,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # pnpm
 export PNPM_HOME="/Users/sairaj.chouhan/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+export PATH="/Users/sairaj.chouhan/mine/wrk:$PATH"
 # pnpm end
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(starship init zsh)"
