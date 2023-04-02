@@ -42,9 +42,10 @@ require('lazy').setup({
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
 
+      "jose-elias-alvarez/null-ls.nvim",
+      "jay-babu/mason-null-ls.nvim",
     },
   },
-
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',               -- completion plugin writter in lua
@@ -271,6 +272,7 @@ require('sairaj.telescope')
 require('sairaj.treesitter')
 require('sairaj.lsp')
 require('sairaj.cmp')
+require('sairaj.null-ls')
 
 
 -------------- MY REMAPS --------------------
@@ -306,7 +308,7 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
-keymap('n', 'x', '"_x', opts) -- do not yank on x
+keymap('n', 'x', '"_x', opts)  -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
 -----------------------------------------
