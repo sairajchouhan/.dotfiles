@@ -132,6 +132,8 @@ require('lazy').setup({
     end,
   },
 
+  { "nvim-treesitter/nvim-treesitter-context" },
+
   {
     'windwp/nvim-autopairs',
     config = true
@@ -158,6 +160,11 @@ require('lazy').setup({
       },
       update_focused_file = {
         enable = true,
+      },
+      view = {
+        float = {
+          enable = true
+        }
       },
       renderer = {
         icons = {
