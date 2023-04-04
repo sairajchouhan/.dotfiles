@@ -37,13 +37,14 @@ require('lazy').setup({
       'simrat39/rust-tools.nvim',
 
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',             opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
 
       "jose-elias-alvarez/null-ls.nvim",
       "jay-babu/mason-null-ls.nvim",
+      { "simrat39/symbols-outline.nvim", opts = {} }
     },
   },
   {
@@ -317,6 +318,8 @@ keymap("n", "N", "Nzzzv", opts)
 
 keymap('n', 'x', '"_x', opts)  -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
+
+keymap("n", "<leader>o", ":SymbolsOutline<cr>", opts)
 
 -----------------------------------------
 
