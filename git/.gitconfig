@@ -23,6 +23,9 @@
 [includeIf "gitdir:~/.dotfiles/"] 
     path = ~/mine/.gitconfig
 
+[includeIf "gitdir:~/cs/"]
+    path = ~/mine/.gitconfig
+
 ; [includeIf "gitdir:~/work/"]
 ;     path = ~/work/.gitconfig-work
 
