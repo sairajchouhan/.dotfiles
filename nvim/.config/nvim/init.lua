@@ -72,7 +72,8 @@ require('lazy').setup({
     "folke/tokyonight.nvim",
     priority = 1000,
     opts = {
-      style = "night"
+      style = "night",
+      transparent = false,
     },
     init = function()
       vim.cmd.colorscheme 'tokyonight'
