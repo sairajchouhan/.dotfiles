@@ -73,7 +73,7 @@ require('lazy').setup({
     priority = 1000,
     opts = {
       style = "night",
-      transparent = false,
+      transparent = true,
     },
     init = function()
       vim.cmd.colorscheme 'tokyonight'
