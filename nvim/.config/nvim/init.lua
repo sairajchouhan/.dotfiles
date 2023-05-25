@@ -147,7 +147,16 @@ require('lazy').setup({
 
   {
     'windwp/nvim-autopairs',
-    config = true
+    config = function()
+      require("nvim-autopairs").setup {};
+    end
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
   },
 
   {
@@ -161,7 +170,6 @@ require('lazy').setup({
     "folke/todo-comments.nvim",
     opts = {}
   },
-
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -285,11 +293,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.cmd("silent! lua require('telescope.builtin').find_files()")
-  end
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.cmd("silent! lua require('telescope.builtin').find_files()")
+--   end
+-- })
 
 require('sairaj.telescope')
 require('sairaj.treesitter')
