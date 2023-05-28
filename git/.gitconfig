@@ -14,20 +14,5 @@
 [diff]
     colorMoved = default
 
-[includeIf "gitdir:~/mine/"] 
-    path = ~/mine/.gitconfig
-
-[includeIf "gitdir:~/.config/"] 
-    path = ~/mine/.gitconfig
- 
-[includeIf "gitdir:~/.dotfiles/"] 
-    path = ~/mine/.gitconfig
-
-[includeIf "gitdir:~/cs/"]
-    path = ~/mine/.gitconfig
-
-; [includeIf "gitdir:~/work/"]
-;     path = ~/work/.gitconfig-work
-
 [push]
     autoSetupRemote = true
