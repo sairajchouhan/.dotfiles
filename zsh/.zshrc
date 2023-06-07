@@ -15,7 +15,6 @@ function t(){
 
 alias ":w"="echo \"bro what are you doing?\""
 
-alias z="nvim ~/.zshrc"
 alias s="source ~/.zshrc"
 alias n="nvim ."
 
@@ -24,6 +23,7 @@ alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
 alias gp="git push && gh browse"
+alias zsh="nvim ~/.zshrc"
 
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
@@ -37,12 +37,9 @@ alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 
 export EDITOR="nvim"
 
+# nvm - node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# bun completions
-[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -51,11 +48,13 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # pnpm
 export PNPM_HOME="/Users/sairaj.chouhan/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-export PATH="/Users/sairaj.chouhan/mine/wrk:$PATH"
-# pnpm end
 
+# wrk
+export PATH="/Users/sairaj.chouhan/mine/wrk:$PATH"
+
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(starship init zsh)"
-
+eval "$(zoxide init zsh)"
 # eval "$(play alias zsh)"
