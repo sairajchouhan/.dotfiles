@@ -955,7 +955,13 @@ colors:
     cyan: "#5ffdff"
     white: "#fffeff"
 
+  selection:
+    text: "#000000"
+    background: "#c1ddff"
+
+  cursor:
+    text: "#fffeff"
+    cursor: "#c7c7c7"
 
 env:
   TERM: xterm-256color
-
