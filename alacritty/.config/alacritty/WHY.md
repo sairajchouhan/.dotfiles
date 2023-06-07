@@ -1,0 +1,7 @@
+- it does not have the bug that's in iterm2 (which irritates me a lot), what happens it everytime I open a application with spotlight or raycast it does not bring in front of the current terminal;
+- it's fast;
+- it's minial, no crazy profile or pointer settings with GUI, minimal yml config, it's good;
+- more importantly I have a single config that I can add to version control and it lets me just copy paste the config file and get going with the terminal  just the way I want, where as iterm2 has this crazy file types which I had no time and interest to understand, hence yml wins here;
+- it may do some justice to my 16-Core GPUs;
+- it does not even have menu bar options LOL;
+- last but not least it's written in rust;
