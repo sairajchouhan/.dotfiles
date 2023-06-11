@@ -15,7 +15,7 @@
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a5ca8b03972b347b74b2ad2f7f23f120a514593b" },
   "mason-null-ls.nvim": { "branch": "main", "commit": "a991e7697514f30126fac7c07a11c488c553e94f" },
   "mason.nvim": { "branch": "main", "commit": "bb0a624c77d6bee1bd2d4cb1ad1748b8df4292b6" },
-  "neodev.nvim": { "branch": "main", "commit": "864b35006d3de24c60e44b566de8018f919b13e6" },
+  "neodev.nvim": { "branch": "main", "commit": "d69254e1fbdc4a04c56719dde19e5eafb7b04b58" },
   "null-ls.nvim": { "branch": "main", "commit": "5855128178fa78293acdfb5b4e41ef046779240b" },
   "nvim-autopairs": { "branch": "master", "commit": "7747bbae60074acf0b9e3a4c13950be7a2dff444" },
   "nvim-cmp": { "branch": "main", "commit": "777450fd0ae289463a14481673e26246b5e38bf2" },

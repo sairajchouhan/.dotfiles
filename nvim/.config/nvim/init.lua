@@ -1,3 +1,7 @@
+
+require('sairaj.globals')
+
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
@@ -70,6 +74,7 @@ require('lazy').setup({
 
   {
     "folke/tokyonight.nvim",
+    lazy = false,
     priority = 1000,
     opts = {
       style = "night",
@@ -182,7 +187,7 @@ require('lazy').setup({
       },
       view = {
         float = {
-          enable = true
+          enable = false
         }
       },
       renderer = {
@@ -203,6 +208,13 @@ require('lazy').setup({
       }
     }
   },
+  {
+    "sairajchouhan/blame.nvim",
+    config = function()
+      require("blame").setup()
+    end,
+    dev = true
+  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -218,8 +230,15 @@ require('lazy').setup({
   --
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
   --    to get rid of the warning telling you that there are not plugins in `lua/custom/plugins/`.
-  { import = 'custom.plugins' },
-}, {})
+  -- { import = 'custom.plugins' },
+}, {
+  dev = {
+    path = "~/mine/plugins",
+  },
+  ui = {
+    border = "rounded"
+  }
+})
 
 -- [[ Setting options ]]
 -- See `:help vim.o`

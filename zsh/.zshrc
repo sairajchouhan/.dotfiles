@@ -34,6 +34,7 @@ alias mdkir="mkdir"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 
 
+# fzf-tmux -p --reverse
 
 export EDITOR="nvim"
 
