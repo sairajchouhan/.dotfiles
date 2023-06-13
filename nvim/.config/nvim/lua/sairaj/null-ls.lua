@@ -7,16 +7,16 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettier,
-    -- null_ls.builtins.diagnostics.eslint_d.with({
-    --   condition = function(utils)
-    --     local arr = { ".eslintrc.js", ".eslintrc.json" }
-    --     for _, file in ipairs(arr) do
-    --       if utils.root_has_file(file) then
-    --         return true
-    --       end
-    --     end
-    --   end,
-    -- })
+    null_ls.builtins.diagnostics.eslint_d.with({
+      condition = function(utils)
+        local arr = { ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs" }
+        for _, file in ipairs(arr) do
+          if utils.root_has_file(file) then
+            return true
+          end
+        end
+      end,
+    })
   },
   on_attach = function(current_client, bufnr)
     if current_client.supports_method("textDocument/formatting") then
