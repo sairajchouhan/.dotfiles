@@ -208,7 +208,7 @@ require('lazy').setup({
     config = function()
       require("blame").setup()
     end,
-    dev = true
+    dev = false
   }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -359,6 +359,8 @@ keymap('n', 'x', '"_x', opts)  -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
 keymap("n", "<leader>o", ":SymbolsOutline<cr>", opts)
+
+keymap("n", "<leader>bl", ":BlameLineOnce<cr>", opts)
 
 -----------------------------------------
 
