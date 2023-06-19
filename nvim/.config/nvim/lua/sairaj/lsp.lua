@@ -111,6 +111,7 @@ local servers = {
     },
   },
   clangd = {},
+  bashls = {},
 }
 
 -- Setup neovim lua configuration
@@ -132,7 +133,6 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-
     if server_name == "rust_analyzer" then
       local rt = require("rust-tools")
 
