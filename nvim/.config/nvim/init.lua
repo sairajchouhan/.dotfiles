@@ -182,8 +182,9 @@ require('lazy').setup({
       },
       view = {
         float = {
-          enable = false
-        }
+          enable = true
+        },
+        adaptive_size = true
       },
       renderer = {
         icons = {
