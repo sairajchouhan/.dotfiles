@@ -23,6 +23,7 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   "github/copilot.vim",
+  "christoomey/vim-tmux-navigator",
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   --
@@ -37,14 +38,13 @@ require('lazy').setup({
       'simrat39/rust-tools.nvim',
 
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',             opts = {} },
+      { 'j-hui/fidget.nvim', opts = {}, tag = "legacy" },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
 
       "jose-elias-alvarez/null-ls.nvim",
       "jay-babu/mason-null-ls.nvim",
-      { "simrat39/symbols-outline.nvim", opts = {} }
     },
   },
   {
@@ -287,7 +287,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
 vim.o.wrap = false
@@ -336,12 +335,6 @@ keymap('i', '<C-c>', '<ESC>', opts)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
 
--- navigating between splits
-keymap('n', "<C-h>", "<C-w>h", opts)
-keymap('n', "<C-j>", "<C-w>j", opts)
-keymap('n', "<C-k>", "<C-w>k", opts)
-keymap('n', "<C-l>", "<C-w>l", opts)
-
 -- resize windows
 keymap("n", "<C-S-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-S-Down>", ":resize +2<CR>", opts)
@@ -358,8 +351,6 @@ keymap("n", "N", "Nzzzv", opts)
 
 keymap('n', 'x', '"_x', opts)  -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
-
-keymap("n", "<leader>o", ":SymbolsOutline<cr>", opts)
 
 keymap("n", "<leader>bl", ":BlameLineOnce<cr>", opts)
 
