@@ -17,6 +17,7 @@ alias ":w"="echo \"bro what are you doing?\""
 
 alias s="source ~/.zshrc"
 alias n="nvim ."
+alias c="clear"
 
 
 alias cs="cd ~/cs"
@@ -60,3 +61,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(github-copilot-cli alias -- "$0")"
 # eval "$(play alias zsh)"
+
+# bun completions
+[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"

@@ -23,7 +23,6 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   "github/copilot.vim",
-  "christoomey/vim-tmux-navigator",
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   --
@@ -209,7 +208,7 @@ require('lazy').setup({
     config = function()
       require("blame").setup()
     end,
-    dev = false
+    dev = true
   }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -334,6 +333,12 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 keymap('i', '<C-c>', '<ESC>', opts)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
+
+-- navigating between splits
+keymap('n', "<C-h>", "<C-w>h", opts)
+keymap('n', "<C-j>", "<C-w>j", opts)
+keymap('n', "<C-k>", "<C-w>k", opts)
+keymap('n', "<C-l>", "<C-w>l", opts)
 
 -- resize windows
 keymap("n", "<C-S-Up>", ":resize -2<CR>", opts)
