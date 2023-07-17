@@ -73,6 +73,10 @@ require('lazy').setup({
     opts = {
       style = "night",
       transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      }
     },
     init = function()
       vim.cmd.colorscheme 'tokyonight'
