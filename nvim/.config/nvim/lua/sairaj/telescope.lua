@@ -6,18 +6,18 @@ require('telescope').setup {
     },
     mappings = {
       i = {
-        ["<C-c>"] = { "<esc>", type = "command" }
+        ["<C-c>"] = require('telescope.actions').close
       },
       n = {
         ["<C-c>"] = require('telescope.actions').close
       }
     },
   },
-  pickers = {
-    lsp_references = {
-      initial_mode = "normal"
-    }
-  }
+  -- pickers = {
+  --   lsp_references = {
+  --     initial_mode = "normal"
+  --   }
+  -- }
 }
 
 -- Enable telescope fzf native, if installed
