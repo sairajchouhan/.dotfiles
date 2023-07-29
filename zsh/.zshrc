@@ -16,7 +16,7 @@ function t(){
 alias ":w"="echo \"bro what are you doing?\""
 
 alias s="source ~/.zshrc"
-alias n="nvim ."
+alias n="nvim"
 alias c="clear"
 
 
@@ -24,14 +24,12 @@ alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
 alias gp="git push && gh browse"
-alias zsh="nvim ~/.zshrc"
 
+alias zsh="nvim ~/.zshrc"
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
-alias dot="cd ~/.dotfiles"
 
 alias mine="cd ~/mine"
-alias mdkir="mkdir"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 
 
@@ -61,6 +59,3 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(github-copilot-cli alias -- "$0")"
 # eval "$(play alias zsh)"
-
-# bun completions
-[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
