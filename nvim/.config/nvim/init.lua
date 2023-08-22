@@ -185,9 +185,9 @@ require('lazy').setup({
       },
       view = {
         float = {
-          enable = true
+          enable = false
         },
-        adaptive_size = true
+        adaptive_size = false,
       },
       renderer = {
         icons = {
@@ -211,6 +211,13 @@ require('lazy').setup({
     "sairajchouhan/blame.nvim",
     config = function()
       require("blame").setup()
+    end,
+    dev = true
+  },
+  {
+    "sairajchouhan/cbugger.nvim",
+    config = function()
+      require("cbugger").setup()
     end,
     dev = true
   }

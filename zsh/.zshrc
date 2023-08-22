@@ -24,10 +24,12 @@ alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
 alias gp="git push && gh browse"
+alias pr="gh pr view -w"
 
 alias zsh="nvim ~/.zshrc"
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
+
 
 alias mine="cd ~/mine"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
