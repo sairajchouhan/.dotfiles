@@ -61,3 +61,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(github-copilot-cli alias -- "$0")"
 # eval "$(play alias zsh)"
+
+# bun completions
+[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
