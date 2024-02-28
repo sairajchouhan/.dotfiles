@@ -6,8 +6,20 @@ vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank({
+      timeout = 30
+    })
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
 if vim.g.vscode then
   require("sairaj.options")
+  require('vscode')
   return;
 end
 
@@ -252,27 +264,6 @@ require('lazy').setup({
 })
 
 
--- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank({
-      timeout = 30
-    })
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
-
--- vim.api.nvim_create_autocmd("VimEnter", {
---   callback = function()
---     vim.cmd("silent! lua require('telescope.builtin').find_files()")
---   end
--- })
 
 require('sairaj.options')
 require('sairaj.telescope')

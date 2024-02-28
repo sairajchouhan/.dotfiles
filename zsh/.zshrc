@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
@@ -18,6 +19,8 @@ alias ":w"="echo \"bro what are you doing?\""
 alias s="source ~/.zshrc"
 alias n="nvim"
 alias c="clear"
+alias touch="retouch"
+
 
 
 alias cs="cd ~/cs"
@@ -57,10 +60,11 @@ export PATH="/Users/sairaj.chouhan/mine/wrk:$PATH"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-eval "$(github-copilot-cli alias -- "$0")"
+# eval "$(starship init zsh)"
+# eval "$(zoxide init zsh)"
+# eval "$(github-copilot-cli alias -- "$0")"
 # eval "$(play alias zsh)"
 
 # bun completions
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
+export PATH="/Users/sairaj.chouhan/.deno/bin:$PATH"
