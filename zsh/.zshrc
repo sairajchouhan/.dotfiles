@@ -66,13 +66,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 
 # Aliases
-alias s='source ~/.zshrc'
+alias s="source ~/.zshrc"
 alias s="source ~/.zshrc"
 alias n="nvim"
 alias c="clear"
 
-alias ":w"="echo \"bro what are you doing?\""
-alias ls='ls --color'
+alias ls="ls --color"
 alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
@@ -84,6 +83,10 @@ alias gcm="git commit -m"
 alias touch="retouch"
 alias mine="cd ~/mine"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
+
+alias ":w"="echo \"bro what are you doing?\""
+alias ".."="cd .."
+alias "..."="cd .. && cd .."
 
 
 function t(){
