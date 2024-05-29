@@ -75,6 +75,7 @@ alias ls="ls --color"
 alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
+alias pr="gh pr create -w"
 
 alias zsh="nvim ~/.zshrc"
 alias cat="bat --paging=never"
