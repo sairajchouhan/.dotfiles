@@ -1,3 +1,3 @@
-./tmux/.config/tmux/plugins
 .DS_Store
 state.yml
+tmux/.config/tmux/plugins
