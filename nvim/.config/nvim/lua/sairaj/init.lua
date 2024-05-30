@@ -1,6 +1,0 @@
-require("sairaj.lsp")
-require("sairaj.cmp")
-require("sairaj.treesitter")
-require("sairaj.telescope")
-require("sairaj.null-ls")
-require('sairaj.options')
