@@ -1,5 +1,6 @@
 require 'sairaj.globals'
 require 'sairaj.opts'
+require 'sairaj.remaps'
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -165,8 +166,6 @@ require('lazy').setup({
     },
   },
 })
-
-require 'sairaj.remaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

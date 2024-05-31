@@ -15,6 +15,9 @@ return {
       adaptive_size = true,
     },
     renderer = {
+      indent_markers = {
+        enable = true,
+      },
       icons = {
         git_placement = 'signcolumn',
         glyphs = {
