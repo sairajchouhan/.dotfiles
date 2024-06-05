@@ -10,12 +10,27 @@
 
 [merge]
     conflictstyle = diff3
+    tool = p4merge
 
 [diff]
     colorMoved = default
+    tool = p4merge
 
 [push]
     autoSetupRemote = true
+
 [user]
-	email = sairaj2119@gmail.com
-	name = Sairaj Chouhan
+    email = sairaj2119@gmail.com
+    name = Sairaj Chouhan
+
+[difftool "p4merge"]
+	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
+
+[difftool]
+	prompt = false
+
+[mergetool "p4merge"]
+	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
+
+[mergetool]
+	prompt = false

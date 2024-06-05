@@ -1,3 +1,8 @@
+if vim.g.vscode then
+  require 'sairaj.opts'
+  return
+end
+
 require 'sairaj.globals'
 require 'sairaj.opts'
 require 'sairaj.remaps'
@@ -25,6 +30,12 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'github/copilot.vim',
   'JoosepAlviste/nvim-ts-context-commentstring',
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end,
+  },
   {
     'numToStr/Comment.nvim',
     config = function()
@@ -80,7 +91,8 @@ require('lazy').setup({
         local disable_filetypes = { c = true, cpp = true }
         return {
           timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+          -- lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+          lsp_fallback = false,
         }
       end,
       formatters_by_ft = {
