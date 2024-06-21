@@ -127,6 +127,8 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
+  { 'nvim-treesitter/nvim-treesitter-context' },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
