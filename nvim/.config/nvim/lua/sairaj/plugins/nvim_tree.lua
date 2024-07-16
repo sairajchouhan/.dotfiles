@@ -28,7 +28,7 @@ return {
             deleted = 'D',
             ignored = '◌',
             unmerged = '',
-            staged = '',
+            staged = 'S',
           },
         },
       },
