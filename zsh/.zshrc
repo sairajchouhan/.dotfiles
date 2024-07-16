@@ -43,7 +43,7 @@ bindkey '^n' history-search-forward
 
 
 # History
-HISTSIZE=5000
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -71,6 +71,7 @@ alias s="source ~/.zshrc"
 alias n="nvim"
 alias c="clear"
 
+# alias ls="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ls="ls --color"
 alias cs="cd ~/cs"
 alias rm="trash"
@@ -108,6 +109,30 @@ eval "$(zoxide init zsh)"
 # exports
 export EDITOR="nvim"
 export NVM_DIR="$HOME/.nvm"
+# export BAT_THEME="Dracula"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none
+  --color=bg+:#283457 \
+  --color=bg:#000000 \
+  --color=border:#27a1b9 \
+  --color=fg:#c0caf5 \
+  --color=gutter:#16161e \
+  --color=header:#ff9e64 \
+  --color=hl+:#2ac3de \
+  --color=hl:#2ac3de \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#2ac3de \
+  --color=query:#c0caf5:regular \
+  --color=scrollbar:#27a1b9 \
+  --color=separator:#ff9e64 \
+  --color=spinner:#ff007c \
+"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
