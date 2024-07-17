@@ -28,11 +28,14 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'github/copilot.vim',
+  -- TODO: set this up after setting node to lts expect in cs folder
+  -- 'github/copilot.vim',
   'JoosepAlviste/nvim-ts-context-commentstring',
   {
     'norcalli/nvim-colorizer.lua',
-    opts = {},
+    config = function()
+      require('colorizer').setup()
+    end,
   },
   {
     'numToStr/Comment.nvim',
@@ -115,9 +118,9 @@ require('lazy').setup({
   require 'sairaj.plugins.formatting',
   require 'sairaj.plugins.bufferline',
   require 'sairaj.plugins.vim_tmux_navigator',
-    -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-    --    This is the easiest way to modularize your config.
-    --
+  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
+  --    This is the easiest way to modularize your config.
+  --
   { import = 'custom.plugins' },
 }, {
   ui = {
