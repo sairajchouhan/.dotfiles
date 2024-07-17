@@ -114,10 +114,10 @@ require('lazy').setup({
   require 'sairaj.plugins.treesitter',
   require 'sairaj.plugins.formatting',
   require 'sairaj.plugins.bufferline',
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
+  require 'sairaj.plugins.vim_tmux_navigator',
+    -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
+    --    This is the easiest way to modularize your config.
+    --
   { import = 'custom.plugins' },
 }, {
   ui = {

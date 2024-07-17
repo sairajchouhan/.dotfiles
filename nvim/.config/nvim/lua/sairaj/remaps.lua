@@ -5,12 +5,6 @@ keymap('i', '<C-c>', '<ESC>', opts)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
 
--- navigating between splits
-keymap('n', '<C-h>', '<C-w>h', opts)
-keymap('n', '<C-j>', '<C-w>j', opts)
-keymap('n', '<C-k>', '<C-w>k', opts)
-keymap('n', '<C-l>', '<C-w>l', opts)
-
 -- resize windows
 keymap('n', '<C-S-Up>', ':resize -2<CR>', opts)
 keymap('n', '<C-S-Down>', ':resize +2<CR>', opts)
