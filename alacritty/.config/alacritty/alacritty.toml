@@ -10,7 +10,7 @@ decorations = "buttonless"
 size = 18
 
   [font.normal]
-  family = "Hack Nerd Font"
+  family = "JetBrainsMono Nerd Font"
   style = "Regular"
 
 [env]
