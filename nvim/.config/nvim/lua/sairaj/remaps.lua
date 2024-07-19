@@ -2,7 +2,6 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 keymap('i', '<C-c>', '<ESC>', opts)
-keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
 
 -- resize windows
