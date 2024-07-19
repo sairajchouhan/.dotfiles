@@ -126,7 +126,6 @@ require('lazy').setup({
     },
   },
 
-  -- require 'sairaj.plugins.lint',
   -- require 'sairaj.plugins.debug',
   require 'sairaj.plugins.indent_line',
   require 'sairaj.plugins.autopairs',
@@ -138,6 +137,7 @@ require('lazy').setup({
   require 'sairaj.plugins.cmp',
   require 'sairaj.plugins.treesitter',
   require 'sairaj.plugins.formatting',
+  require 'sairaj.plugins.lint',
   require 'sairaj.plugins.bufferline',
   require 'sairaj.plugins.vim_tmux_navigator',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
