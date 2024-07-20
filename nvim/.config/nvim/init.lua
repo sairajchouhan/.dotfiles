@@ -28,7 +28,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
   'JoosepAlviste/nvim-ts-context-commentstring',
   {
     'norcalli/nvim-colorizer.lua',
