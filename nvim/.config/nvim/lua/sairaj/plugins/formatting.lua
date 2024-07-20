@@ -51,6 +51,7 @@ return {
       yaml = { 'prettierd' },
       markdown = { 'prettierd' },
       graphql = { 'prettierd' },
+      rust = { 'rustfmt' },
     },
   },
 }
