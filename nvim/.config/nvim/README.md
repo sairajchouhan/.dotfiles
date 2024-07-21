@@ -106,8 +106,3 @@ NVIM_APPNAME=sairajchouhan/.dotfiles/nvim/.config/nvim nvim
 ### tabline
 
 - [akinsho/bufferline.nvim](https://dotfyle.com/plugins/akinsho/bufferline.nvim)
-
-## Language Servers
-
-- html
-- tflint
