@@ -125,6 +125,13 @@ require('lazy').setup({
     },
   },
 
+  {
+    'goolord/alpha-nvim',
+    config = function()
+      require('alpha').setup(require('alpha.themes.dashboard').config)
+    end,
+  },
+
   -- require 'sairaj.plugins.debug',
   require 'sairaj.plugins.indent_line',
   require 'sairaj.plugins.autopairs',
