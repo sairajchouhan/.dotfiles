@@ -3,4 +3,10 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 
-notARepository: 'quit'
+gui:
+  nerdFontsVersion: "3"
+  theme:
+    selectedLineBgColor:
+      - "#3b4261"
+
+notARepository: "quit"
