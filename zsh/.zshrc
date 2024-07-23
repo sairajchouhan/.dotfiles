@@ -1,3 +1,5 @@
+echo "Sourcing .zshrc"
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -95,7 +97,6 @@ eval "$(starship init zsh)"
 
 
 # exports
-export ZDOTDIR="~/.config/zsh"
 export EDITOR="nvim"
 export NVM_DIR="$HOME/.nvm"
 # export BAT_THEME="Dracula"
