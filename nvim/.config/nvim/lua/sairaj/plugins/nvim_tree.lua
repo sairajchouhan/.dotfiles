@@ -3,6 +3,10 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = function()
     local tree = require('nvim-tree.api').tree
+    local view = require 'nvim-tree.view'
+    local api = require 'nvim-tree.api'
+    local augroup = vim.api.nvim_create_augroup
+    local autocmd = vim.api.nvim_create_autocmd
     -- Make :bd and :q behave as usual when tree is visible
     vim.api.nvim_create_autocmd({ 'BufEnter', 'QuitPre' }, {
       nested = false,
@@ -38,11 +42,6 @@ return {
         end
       end,
     })
-
-    local view = require 'nvim-tree.view'
-    local api = require 'nvim-tree.api'
-    local augroup = vim.api.nvim_create_augroup
-    local autocmd = vim.api.nvim_create_autocmd
 
     augroup('save_nvim_tree_width', { clear = true })
     autocmd('WinResized', {

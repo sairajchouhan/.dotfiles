@@ -1,5 +1,3 @@
-echo "Sourcing .zshrc"
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -81,7 +79,7 @@ alias "..."="cd .. && cd .."
 
 
 function t(){
-  if tmux ls | cut -d ":" -f 1 | grep $(pwd | xargs basename | tr . -) > /dev/null; then
+  if tmux ls > /dev/null 2>&1 | cut -d ":" -f 1 | grep $(pwd | xargs basename | tr . -) > /dev/null; then
     tmux attach -t $(pwd | xargs basename | tr . -)
   else
     tmux new -s $(pwd | xargs basename | tr . -)
@@ -134,3 +132,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun completions
+[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
