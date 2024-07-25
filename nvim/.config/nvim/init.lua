@@ -31,12 +31,6 @@ require('lazy').setup({
   -- 'github/copilot.vim',
   'JoosepAlviste/nvim-ts-context-commentstring',
   {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end,
-  },
-  {
     'numToStr/Comment.nvim',
     config = function()
       ---@diagnostic disable: missing-fields
@@ -130,6 +124,12 @@ require('lazy').setup({
     config = function()
       require('alpha').setup(require('alpha.themes.dashboard').config)
     end,
+  },
+
+  -- #1f1f1f
+  {
+    'brenoprata10/nvim-highlight-colors',
+    opts = {},
   },
 
   -- require 'sairaj.plugins.debug',
