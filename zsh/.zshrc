@@ -61,12 +61,13 @@ alias c="clear"
 # alias ls="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ls="ls --color"
 alias cs="cd ~/cs"
-alias rm="trash"
+# alias rm="trash"
 alias lg="lazygit"
 alias pr="gh pr create -w"
+alias fd="fdfind"
 
 alias zsh="nvim ~/.zshrc"
-alias cat="bat --paging=never"
+alias cat="batcat --paging=never"
 alias gcm="git commit -m"
 
 alias touch="retouch"
@@ -89,17 +90,18 @@ function t(){
 
 
 # Shell integrations
-eval "$(fzf --zsh)"
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 
 # exports
+export="$PATH:$HOME/.local/bin"
 export EDITOR="nvim"
 export NVM_DIR="$HOME/.nvm"
 # export BAT_THEME="Dracula"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
   --info=inline-right \
   --ansi \
   --layout=reverse \
@@ -135,3 +137,10 @@ esac
 
 # bun completions
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
+
+# fnm
+FNM_PATH="/home/sairaj/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/sairaj/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
