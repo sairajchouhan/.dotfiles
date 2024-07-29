@@ -120,14 +120,6 @@ require('lazy').setup({
   },
 
   {
-    'goolord/alpha-nvim',
-    config = function()
-      require('alpha').setup(require('alpha.themes.dashboard').config)
-    end,
-  },
-
-  -- #1f1f1f
-  {
     'brenoprata10/nvim-highlight-colors',
     opts = {},
   },
