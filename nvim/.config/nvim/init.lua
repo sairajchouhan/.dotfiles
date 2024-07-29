@@ -146,6 +146,9 @@ require('lazy').setup({
   ui = {
     icons = {},
   },
+  checker = {
+    enabled = false,
+  },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`

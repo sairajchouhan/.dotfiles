@@ -7,6 +7,15 @@ return {
     local api = require 'nvim-tree.api'
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd
+
+    vim.api.nvim_create_autocmd('VimEnter', {
+      desc = 'open nvim tree on vim enter',
+      group = vim.api.nvim_create_augroup('nvim-tree-open', { clear = true }),
+      callback = function()
+        tree.open()
+      end,
+    })
+
     -- Make :bd and :q behave as usual when tree is visible
     vim.api.nvim_create_autocmd({ 'BufEnter', 'QuitPre' }, {
       nested = false,
