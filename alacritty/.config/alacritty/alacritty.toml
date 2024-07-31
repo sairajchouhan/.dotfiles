@@ -2,13 +2,13 @@ import = [ "~/.config/alacritty/themes/tokyonight_night.toml" ]
 live_config_reload = true
 
 [window]
-opacity = 1.0 
 decorations = "buttonless"
 
+opacity = 0.8
+blur = true
 
 [font]
 size = 18
-
   [font.normal]
   family = "JetBrainsMono Nerd Font"
   style = "Regular"

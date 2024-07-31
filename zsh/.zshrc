@@ -54,12 +54,12 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias s="source ~/.zshrc"
-alias s="source ~/.zshrc"
 alias n="nvim"
 alias c="clear"
+alias l="eza -l --icons --all"
 
 # alias ls="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias ls="ls --color"
+alias ls="eza"
 alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
