@@ -20,6 +20,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
+vim.opt.fillchars = { eob = ' ' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
@@ -33,9 +34,10 @@ vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 
-vim.opt.completeopt = 'menuone,noselect'
+-- vim.opt.completeopt = 'menuone,noselect'
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
 
-vim.g.skip_ts_context_commentstring_module = true
+-- vim.g.skip_ts_context_commentstring_module = true
+
