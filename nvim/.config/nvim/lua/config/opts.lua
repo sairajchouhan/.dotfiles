@@ -8,7 +8,6 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
-vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -39,5 +38,6 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
 
--- vim.g.skip_ts_context_commentstring_module = true
-
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
