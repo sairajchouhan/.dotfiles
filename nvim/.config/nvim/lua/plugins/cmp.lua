@@ -31,8 +31,7 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
-      -- TODO: have to test what this option provides, currently default is good
-      -- completion = { completeopt = 'menu,menuone,noinsert' },
+      completion = { completeopt = 'menu,menuone,noinsert' },
       mapping = cmp.mapping.preset.insert {
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),

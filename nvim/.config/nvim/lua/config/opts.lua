@@ -33,7 +33,6 @@ vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 
--- vim.opt.completeopt = 'menuone,noselect'
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
