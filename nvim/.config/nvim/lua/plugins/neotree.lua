@@ -9,7 +9,7 @@ return {
   config = function()
     vim.keymap.set("n", "<leader>e", function()
       vim.cmd("Neotree toggle")
-    end)
+    end, { desc = "toggle neo tree" })
 
     require("neo-tree").setup({
       close_if_last_window = true,

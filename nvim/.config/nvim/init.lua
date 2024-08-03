@@ -3,7 +3,7 @@ if vim.g.vscode then
   return
 end
 
-require("config.globals")
+require("config.utils")
 require("config.opts")
 require("config.autocmd")
 require("config.keymaps")

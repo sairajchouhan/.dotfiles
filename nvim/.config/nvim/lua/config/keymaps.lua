@@ -5,10 +5,10 @@ keymap('i', '<C-c>', '<ESC>', opts)
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
 
 -- resize windows
-keymap('n', '<C-S-Up>', ':resize -2<CR>', opts)
-keymap('n', '<C-S-Down>', ':resize +2<CR>', opts)
-keymap('n', '<C-S-Left>', ':vertical resize -2<CR>', opts)
-keymap('n', '<C-S-Right>', ':vertical resize +2<CR>', opts)
+keymap('n', '<C-S-Up>', ':resize +2<CR>', opts)
+keymap('n', '<C-S-Down>', ':resize -2<CR>', opts)
+keymap('n', '<C-S-Left>', ':vertical resize +2<CR>', opts)
+keymap('n', '<C-S-Right>', ':vertical resize -2<CR>', opts)
 
 -- move lines up and down
 keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
