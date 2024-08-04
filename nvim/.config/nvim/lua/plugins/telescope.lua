@@ -21,6 +21,8 @@ return {
 				layout_config = {
 					prompt_position = "top",
 				},
+				-- always ignore .git folders
+				file_ignore_patterns = { "%.git/" }
 			},
 			pickers = {
 				live_grep = {
@@ -28,6 +30,9 @@ return {
 						preview_width = 0.5,
 					},
 				},
+				find_files = {
+					hidden = true
+				}
 			},
 			extensions = {},
 		})
