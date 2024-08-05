@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
+    desc = "Open help on right side split",
     group = vim.api.nvim_create_augroup("help_window_right", {}),
     pattern = { "*.txt" },
     callback = function()
