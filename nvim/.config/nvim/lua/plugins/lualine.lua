@@ -4,6 +4,7 @@ return {
   opts = {
     options = {
       theme = "tokyonight",
+      icons_enabled = false
     },
     extensions = {
       'neo-tree',
