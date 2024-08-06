@@ -5,6 +5,6 @@ end
 
 require("config.utils")
 require("config.opts")
-require("config.autocmd")
+require("config.mine")
 require("config.keymaps")
 require("config.lazy")

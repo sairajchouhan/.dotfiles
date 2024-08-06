@@ -21,3 +21,4 @@ keymap('n', 'N', 'Nzzzv', opts)
 keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
+keymap('n', '<leader>s', '<Cmd>source %<CR>', opts)
