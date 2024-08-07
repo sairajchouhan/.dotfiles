@@ -1,13 +1,13 @@
-return { 
-  "lukas-reineke/indent-blankline.nvim",
-  main = "ibl",
-  event = { "BufReadPre", "BufNewFile" },
+return {
+  'lukas-reineke/indent-blankline.nvim',
+  main = 'ibl',
+  event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     indent = {
-      char = "┊"
+      char = '┊',
     },
     scope = {
-      enabled = false
-    }
-  }
+      enabled = false,
+    },
+  },
 }

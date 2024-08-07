@@ -7,7 +7,7 @@ return {
     style = 'night',
     styles = {
       sidebars = 'transparent',
-      floats = 'transparent'
+      floats = 'transparent',
     },
   },
   init = function()

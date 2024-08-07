@@ -3,8 +3,8 @@ if vim.g.vscode then
   return
 end
 
-require("config.utils")
-require("config.opts")
-require("config.mine")
-require("config.keymaps")
-require("config.lazy")
+require 'config.utils'
+require 'config.opts'
+require 'config.mine'
+require 'config.keymaps'
+require 'config.lazy'

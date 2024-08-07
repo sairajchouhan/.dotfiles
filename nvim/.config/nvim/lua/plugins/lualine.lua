@@ -3,14 +3,14 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     options = {
-      theme = "tokyonight",
-      icons_enabled = false
+      theme = 'tokyonight',
+      icons_enabled = false,
     },
     extensions = {
       'neo-tree',
       'mason',
       'lazy',
-      'trouble'
-    }
-  }
+      'trouble',
+    },
+  },
 }
