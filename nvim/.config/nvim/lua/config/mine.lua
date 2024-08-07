@@ -20,33 +20,42 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 
 ----------------------------------
-local function get_keys(tbl)
-  local keys = {}
-  for key, _ in pairs(tbl) do
-    table.insert(keys, key)
-  end
-  return keys
-end
 
-local function starts_with(str, prefix)
-  return string.sub(str, 1, string.len(prefix)) == prefix
-end
+local main_commands = { 'relative_line_numbers' }
+local args = { [main_commands[1]] = { 'toggle', 'on', 'off' } }
 
-local main_commands = { 'relative_line_numbers', 'something' }
-local args = { relative_line_numbers = { 'toggle', 'on', 'off' }, something = { 'a', 'b' } }
-local args_keys = get_keys(args)
-
--- this is the aim
--- :Customise relative_line_numbers toggle
 vim.api.nvim_create_user_command('Customise', function(opts)
-  P(starts_with(opts.fargs[1], 'relative_line_numbers'))
-  if opts.fargs[1] == 'relative_line_numbers' then
-    P 'hello hello i am thope'
+  local fargs = opts.fargs
+
+  if fargs[1] == 'relative_line_numbers' then
+    if fargs[2] == 'toggle' then
+      if vim.wo.relativenumber then
+        vim.cmd 'set norelativenumber'
+      else
+        vim.cmd 'set relativenumber'
+      end
+    end
+
+    if fargs[2] == 'on' then
+      vim.cmd 'set relativenumber'
+    end
+
+    if fargs[2] == 'off' then
+      vim.cmd 'set norelativenumber'
+    end
   end
-  P(opts)
 end, {
-  nargs = 1,
-  complete = function()
-    return args_keys
+  nargs = '+',
+  complete = function(_, line)
+    local words = vim.split(line, '%s+')
+    local n = #words
+
+    if n == 2 then
+      return main_commands
+    elseif n == 3 and args[words[2]] then
+      return args[words[2]]
+    end
+
+    return {}
   end,
 })
