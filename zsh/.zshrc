@@ -86,6 +86,14 @@ function t(){
   fi
 }
 
+function cds () {
+  if [[ "$TMUX" ]]; then
+    session=$(tmux display-message -p "#{session_path}")
+    cd "$session"
+  else
+    echo "Runs only inside Tmux"
+  fi
+}
 
 
 # Shell integrations
