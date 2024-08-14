@@ -1,3 +1,7 @@
+# if [[ -z $TMUX ]]; then
+#   tmux a -t runway
+# fi
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -76,7 +80,7 @@ alias ".."="cd .."
 alias "..."="cd .. && cd .."
 
 alias cedit="nvim ~/.config/"
-alias tedit="nvim ~/.config/tmux/"
+alias tedit="nvim ~/.config/tmux/tmux.conf"
 alias zedit="nvim ~/.zshrc"
 alias nedit="nvim ~/.config/nvim/"
 
