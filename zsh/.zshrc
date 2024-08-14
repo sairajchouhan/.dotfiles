@@ -58,14 +58,12 @@ alias n="nvim"
 alias c="clear"
 alias l="eza -l --icons --all"
 
-# alias ls="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ls="eza"
 alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
 alias pr="gh pr create -w"
 
-alias zsh="nvim ~/.zshrc"
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
 
@@ -76,6 +74,11 @@ alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 alias ":w"="echo \"bro what are you doing?\""
 alias ".."="cd .."
 alias "..."="cd .. && cd .."
+
+alias cedit="nvim ~/.config/"
+alias tedit="nvim ~/.config/tmux/"
+alias zedit="nvim ~/.zshrc"
+alias nedit="nvim ~/.config/nvim/"
 
 
 function t(){
