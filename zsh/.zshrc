@@ -1,4 +1,6 @@
 # if [[ -z $TMUX ]]; then
+#   # if there is runway sesstion attach to it
+#   # else create a new session with name "runway"
 #   tmux a -t runway
 # fi
 
