@@ -19,8 +19,9 @@ trap cleanup_and_exit SIGINT
 #   fzf-tmux -p
 # --query "$current_session" --select-1
 
-# current_session=$(tmux display-message -p '#S')
-selected_session=$(tmux ls | cut -d ":" -f 1 | fzf-tmux -p)
+current_session=$(tmux display-message -p '#S')
+line_number=$(tmux ls | grep -n "$current_session" | cut -d ':' -f 1)
+selected_session=$(tmux ls | cut -d ":" -f 1 | fzf-tmux -p --sync --bind "result:transform:[[ -z {fzf:query} ]] && echo \"pos($line_number)\"")
 
 if [[ -n "$selected_session"  ]]; then
   tmux switch-client -t "$selected_session"
