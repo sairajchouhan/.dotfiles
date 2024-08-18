@@ -5,7 +5,11 @@ return {
     {
       'F',
       function()
-        require('conform').format { async = true, lsp_format = 'fallback' }
+        require('conform').format({ async = true, lsp_format = 'fallback' }, function(_, did_edit)
+          if did_edit then
+            vim.cmd 'write'
+          end
+        end)
       end,
       mode = '',
       desc = '[F]ormat buffer',
