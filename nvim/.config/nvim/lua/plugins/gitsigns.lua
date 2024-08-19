@@ -26,6 +26,8 @@ return {
           gitsigns.nav_hunk 'prev'
         end
       end)
+
+      map('n', '<leader>gb', gitsigns.blame_line, { desc = 'git blame line' })
     end,
   },
 }
