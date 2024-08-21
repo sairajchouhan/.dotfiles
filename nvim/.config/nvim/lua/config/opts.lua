@@ -40,3 +40,8 @@ vim.opt.swapfile = false
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
+
+
+-- removes adding new line at the end of file on save
+vim.opt.fixendofline = false
+

@@ -72,6 +72,7 @@ alias pr="gh pr create -w"
 
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
+alias say="fortune | cowsay"
 
 alias touch="retouch"
 alias mine="cd ~/mine"
@@ -88,10 +89,16 @@ alias nedit="nvim ~/.config/nvim/"
 
 
 function t(){
-  if tmux ls > /dev/null 2>&1 | cut -d ":" -f 1 | grep $(pwd | xargs basename | tr . -) > /dev/null; then
-    tmux attach -t $(pwd | xargs basename | tr . -)
+  session_name=$(basename $(pwd) | tr . -)
+  if tmux ls 2> /dev/null | cut -d ":" -f 1 | grep "$session_name" > /dev/null; then
+    if [[ $TMUX ]]; then
+      tmux switch-client -t "$session_name" 
+    else
+      tmux attach -t "$session_name" 
+    fi
   else
-    tmux new -s $(pwd | xargs basename | tr . -)
+    tmux new -s "$session_name" -d
+    tmux switch-client -t "$session_name" 
   fi
 }
 
