@@ -4,7 +4,7 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     indent = {
-      char = '┊',
+      char = '│',
     },
     scope = {
       enabled = false,
