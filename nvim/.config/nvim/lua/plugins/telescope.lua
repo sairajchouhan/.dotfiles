@@ -6,6 +6,7 @@ return {
     'nvim-lua/plenary.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
+      'nvim-telescope/telescope-frecency.nvim',
       build = 'make',
       cond = function()
         return vim.fn.executable 'make' == 1
@@ -41,10 +42,16 @@ return {
           },
         },
       },
-      extensions = {},
+      extensions = {
+        frecency = {
+          show_scores = true,
+          path_display = { "truncate"  },
+        },
+      },
     }
 
     pcall(require('telescope').load_extension, 'fzf')
+    pcall(require('telescope').load_extension, 'frecency')
 
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Search by grep' })
