@@ -1,6 +1,5 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
   event = 'VimEnter',
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -45,7 +44,11 @@ return {
       extensions = {
         frecency = {
           show_scores = true,
-          path_display = { "truncate"  },
+          path_display = {
+            filename_first = {
+              reverse_directories = true,
+            },
+          },
         },
       },
     }
