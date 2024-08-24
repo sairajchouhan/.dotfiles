@@ -9,14 +9,6 @@
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     line-numbers = true
 
-[merge]
-    conflictstyle = diff3
-    tool = p4merge
-
-[diff]
-    colorMoved = default
-    tool = p4merge
-
 [push]
     autoSetupRemote = true
 
@@ -24,14 +16,10 @@
     email = sairaj2119@gmail.com
     name = Sairaj Chouhan
 
-[difftool "p4merge"]
-	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
+[credential "https://github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
 
-[difftool]
-	prompt = false
-
-[mergetool "p4merge"]
-	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
-
-[mergetool]
-	prompt = false
+[credential "https://gist.github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
