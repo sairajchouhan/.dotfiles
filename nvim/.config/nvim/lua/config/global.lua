@@ -19,10 +19,21 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end,
 })
 
+-- vim.api.nvim_create_autocmd('CmdlineLeave', {
+--   desc = 'Clear command bar after some time',
+--   group = vim.api.nvim_create_augroup('cmd_leave', {}),
+--   callback = function()
+--     vim.defer_fn(function ()
+--       vim.fn.timer_start(1000, callback, options?)
+--     end, 500)
+--   end,
+-- })
+
 ----------------------------------
 
-local main_commands = { 'relative_line_numbers' }
-local args = { [main_commands[1]] = { 'toggle', 'on', 'off' } }
+local main_commands = { 'relative_line_numbers', 'treesitter_context' }
+local args =
+  { [main_commands[1]] = { 'toggle', 'on', 'off' }, [main_commands[2]] = { 'toggle', 'on', 'off' } }
 
 vim.api.nvim_create_user_command('Customise', function(opts)
   local fargs = opts.fargs
@@ -42,6 +53,18 @@ vim.api.nvim_create_user_command('Customise', function(opts)
 
     if fargs[2] == 'off' then
       vim.cmd 'set norelativenumber'
+    end
+  elseif fargs[1] == 'treesitter_context' then
+    if fargs[2] == 'toggle' then
+      vim.cmd ':TSContextToggle<CR>'
+    end
+
+    if fargs[2] == 'on' then
+      vim.cmd ':TSContextEnable<CR>'
+    end
+
+    if fargs[2] == 'off' then
+      vim.cmd ':TSContextDisable<CR>'
     end
   end
 end, {

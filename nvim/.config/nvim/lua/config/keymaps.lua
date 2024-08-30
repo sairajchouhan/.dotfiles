@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 keymap('i', '<C-c>', '<ESC>', opts)
+keymap('n', '<C-c>', '<ESC>', opts)
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
 
 -- resize windows
@@ -21,4 +22,17 @@ keymap('n', 'N', 'Nzzzv', opts)
 keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
-keymap('n', '<leader>s', '<Cmd>source %<CR>', opts)
+keymap('n', '<leader>co', '<cmd>BufferLineCloseOthers<cr>', opts)
+keymap('n', '<Tab>', '<cmd>BufferLineCyclePrev<cr>', opts)
+keymap('n', '<S-Tab>', '<cmd>BufferLineCycleNext<cr>', opts)
+
+keymap(
+  'n',
+  '<leader>sf',
+  ':source %<CR>',
+  vim.tbl_extend('force', opts, {
+    callback = function()
+      vim.cmd ':lua print("sourced current file")'
+    end,
+  })
+)

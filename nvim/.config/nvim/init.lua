@@ -5,6 +5,6 @@ end
 
 require 'config.utils'
 require 'config.opts'
-require 'config.mine'
+require 'config.global'
 require 'config.keymaps'
 require 'config.lazy'
