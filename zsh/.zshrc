@@ -116,11 +116,11 @@ function cds () {
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 
 # exports
 export EDITOR="nvim"
-export NVM_DIR="$HOME/.nvm"
 # export BAT_THEME="Dracula"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \
@@ -145,8 +145,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=separator:#ff9e64 \
   --color=spinner:#ff007c \
 "
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 
 
 # pnpm
@@ -156,6 +154,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# bun completions
-[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
