@@ -59,7 +59,7 @@ return {
         -- },
         --
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        { name = 'luasnip', max_item_count = 5 },
         { name = 'path' },
       },
     }

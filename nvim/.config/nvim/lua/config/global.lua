@@ -82,3 +82,7 @@ end, {
     return {}
   end,
 })
+
+-- TODO: do this
+-- keymap('n', '<leader>co', '<cmd>BufferLineCloseOthers<cr>', opts)
+-- vim.api.nvim_create_user_command('Bco', '<cmd>BufferLineCloseOthers<cr>', {})
