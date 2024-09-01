@@ -56,10 +56,21 @@ return {
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'frecency')
 
+    local telescope_themes = require 'telescope.themes'
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Search by grep' })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search help' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current word' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Search keymaps' })
+    vim.keymap.set('n', '<leader>fc', function()
+      require('telescope.builtin').command_history(telescope_themes.get_dropdown {
+        previewer = false,
+      })
+    end, { desc = 'Search command history' })
+    vim.keymap.set('n', '<leader>fs', function()
+      require('telescope.builtin').spell_suggest(telescope_themes.get_dropdown {
+        previewer = false,
+      })
+    end, { desc = 'Search spelling suggestions' })
   end,
 }
