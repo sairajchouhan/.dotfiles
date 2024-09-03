@@ -15,3 +15,5 @@ P = function(v, should_log_to_file)
   end
   return v
 end
+
+AllJsFileTypes = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte' }
