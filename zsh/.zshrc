@@ -98,7 +98,7 @@ function t(){
     fi
   else
     tmux new -s "$session_name" -d
-    tmux switch-client -t "$session_name" 
+    tmux attach -t "$session_name" 
   fi
 }
 
