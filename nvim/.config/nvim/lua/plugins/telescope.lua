@@ -5,7 +5,6 @@ return {
     'nvim-lua/plenary.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
-      'nvim-telescope/telescope-frecency.nvim',
       build = 'make',
       cond = function()
         return vim.fn.executable 'make' == 1
@@ -42,14 +41,14 @@ return {
         },
       },
       extensions = {
-        frecency = {
-          show_scores = true,
-          path_display = {
-            filename_first = {
-              reverse_directories = true,
-            },
-          },
-        },
+        -- frecency = {
+        --   show_scores = true,
+        --   path_display = {
+        --     filename_first = {
+        --       reverse_directories = true,
+        --     },
+        --   },
+        -- },
       },
     }
 

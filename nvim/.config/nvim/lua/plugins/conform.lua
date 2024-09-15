@@ -33,6 +33,7 @@ return {
         graphql = { 'prettierd' },
         liquid = { 'prettierd' },
         lua = { 'stylua' },
+        toml = { 'taplo' },
       },
       format_on_save = function(bufnr)
         local disable_filetypes =
