@@ -42,7 +42,11 @@ return {
         map('gI', require('telescope.builtin').lsp_implementations, 'Goto implementation')
         map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type definition')
         map('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document symbols')
-        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace symbols')
+        map(
+          '<leader>ws',
+          require('telescope.builtin').lsp_dynamic_workspace_symbols,
+          'Workspace symbols'
+        )
         map('<leader>rn', vim.lsp.buf.rename, 'Rename')
         map('<leader>ca', vim.lsp.buf.code_action, 'Code action')
 
@@ -87,7 +91,9 @@ return {
 
         -- highlight references of the word under your cursor when your cursor rests there for a little while.
         local client = vim.lsp.get_client_by_id(event.data.client_id)
-        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+        if
+          client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight)
+        then
           local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             buffer = event.buf,
@@ -119,7 +125,8 @@ return {
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    capabilities =
+      vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     --  Add any additional override configuration in the following tables. Available keys are:
     --  - cmd (table): Override the default command used to start the server
@@ -135,7 +142,7 @@ return {
       --
       -- TODO: have to check how useful this is https://github.com/pmizio/typescript-tools.nvim
       rust_analyzer = {},
-      tsserver = {},
+      ts_ls = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
@@ -171,7 +178,8 @@ return {
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+          server.capabilities =
+            vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       },

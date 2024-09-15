@@ -13,6 +13,7 @@ return {
     'saadparwaiz1/cmp_luasnip',
 
     'rafamadriz/friendly-snippets',
+    'onsails/lspkind.nvim',
   },
   config = function()
     local cmp = require 'cmp'
@@ -20,6 +21,7 @@ return {
 
     luasnip.config.setup {}
     require('luasnip.loaders.from_vscode').lazy_load()
+    local lspkind = require 'lspkind'
 
     cmp.setup {
       window = {
@@ -32,6 +34,21 @@ return {
         end,
       },
       completion = { completeopt = 'menu,menuone,noinsert' },
+      ---@diagnostic disable-next-line: missing-fields
+      formatting = {
+        format = lspkind.cmp_format {
+          mode = 'symbol_text',
+          maxwidth = 50,
+          menu = {
+            nvim_lsp = '[LSP]',
+            path = '[Path]',
+            buffer = '[Buffer]',
+          },
+          show_labelDetails = false,
+          ellipsis_char = '...',
+        },
+      },
+
       mapping = cmp.mapping.preset.insert {
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
