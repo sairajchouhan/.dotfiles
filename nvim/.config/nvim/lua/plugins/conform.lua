@@ -34,6 +34,7 @@ return {
         liquid = { 'prettierd' },
         lua = { 'stylua' },
         toml = { 'taplo' },
+        sh = { 'shfmt' },
       },
       format_on_save = function(bufnr)
         local disable_filetypes =
