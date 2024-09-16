@@ -1,8 +1,6 @@
-# if [[ -z $TMUX ]]; then
-#   # if there is runway sesstion attach to it
-#   # else create a new session with name "runway"
-#   tmux a -t runway
-# fi
+if [[ -z $TMUX ]]; then
+  tmux a
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
