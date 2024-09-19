@@ -4,7 +4,7 @@ live_config_reload = true
 [window]
 decorations = "buttonless"
 
-opacity = 0.85
+opacity = 1
 blur = true
 
 [font]

@@ -11,6 +11,11 @@
 
 [push]
     autoSetupRemote = true
+    default = current
+
+[pull]
+    default = current
+    rebase = false
 
 [user]
     email = sairaj2119@gmail.com
