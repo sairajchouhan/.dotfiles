@@ -88,16 +88,16 @@ alias nedit="nvim ~/.config/nvim/"
 
 
 function t(){
-  session_name=$(basename $(pwd) | tr . -)
-  if tmux ls 2> /dev/null | cut -d ":" -f 1 | grep "$session_name" > /dev/null; then
-    if [[ $TMUX ]]; then
-      tmux switch-client -t "$session_name" 
-    else
-      tmux attach -t "$session_name" 
-    fi
+  local session_name=$(basename "$PWD" | tr '.' '-')
+
+  if ! tmux has-session -t="$session_name" 2>/dev/null; then
+    tmux new-session -d -s "$session_name"
+  fi
+
+  if [ -z "$TMUX" ]; then
+    tmux attach-session -t "$session_name"
   else
-    tmux new -s "$session_name" -d
-    tmux attach -t "$session_name" 
+    tmux switch-client -t "$session_name"
   fi
 }
 
