@@ -48,7 +48,7 @@ return {
     'nvim-treesitter/nvim-treesitter-context',
     opts = {
       multiline_threshold = 4,
-      max_lines = 4
-    }
+      max_lines = 4,
+    },
   },
 }

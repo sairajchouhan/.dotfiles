@@ -1,3 +1,6 @@
+local builtin = require 'telescope.builtin'
+local actions = require 'telescope.actions'
+
 return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
@@ -12,8 +15,6 @@ return {
     },
   },
   config = function()
-    local builtin = require 'telescope.builtin'
-
     require('telescope').setup {
       defaults = {
         sorting_strategy = 'ascending',
@@ -22,6 +23,14 @@ return {
         },
         -- always ignore .git folders
         file_ignore_patterns = { '%.git/' },
+        mappings = {
+          n = {
+            ['<C-w>'] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+          i = {
+            ['<C-w>'] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+        },
       },
       pickers = {
         live_grep = {
@@ -33,27 +42,19 @@ return {
           hidden = true,
         },
         lsp_references = {
-          -- removes inline lsp preview
           show_line = false,
           layout_config = {
             preview_width = 0.6,
           },
         },
+        oldfiles = {
+          only_cwd = true,
+        },
       },
-      extensions = {
-        -- frecency = {
-        --   show_scores = true,
-        --   path_display = {
-        --     filename_first = {
-        --       reverse_directories = true,
-        --     },
-        --   },
-        -- },
-      },
+      extensions = {},
     }
 
     pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'frecency')
 
     local telescope_themes = require 'telescope.themes'
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
@@ -61,6 +62,8 @@ return {
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Search help' })
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current word' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Search keymaps' })
+    vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Search old files' })
+
     vim.keymap.set('n', '<leader>fc', function()
       require('telescope.builtin').command_history(telescope_themes.get_dropdown {
         previewer = false,

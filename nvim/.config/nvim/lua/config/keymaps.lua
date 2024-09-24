@@ -30,7 +30,7 @@ keymap('n', '<Tab>', '<cmd>BufferLineCyclePrev<cr>', opts)
 keymap('n', '<S-Tab>', '<cmd>BufferLineCycleNext<cr>', opts)
 
 -- for quickfix list
-keymap('n', '<leader>cn', ':cnext<CR>', opts_f { desc = 'Next item in quickfix list'})
+keymap('n', '<leader>cn', ':cnext<CR>', opts_f { desc = 'Next item in quickfix list' })
 keymap('n', '<leader>cp', ':cprevious<CR>', opts_f { desc = 'Previous item in quickfix list' })
 keymap('n', '<leader>co', ':copen<CR>', opts_f { desc = 'Open quickfix list' })
 keymap('n', '<leader>cc', ':cclose<CR>', opts_f { desc = 'Close quickfix list' })
