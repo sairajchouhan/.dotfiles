@@ -7,26 +7,24 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 
 cleanup_and_exit() {
-    exit 0
+  exit 0
 }
 
 trap cleanup_and_exit SIGINT
 
 # # command to find all dirs in my dirs
-# find ~/cs ~/mine -maxdepth 1 -type d | 
-#   sed 's/.*\///' | 
-#   sed '/^$/d' | 
+# find ~/cs ~/mine -maxdepth 1 -type d |
+#   sed 's/.*\///' |
+#   sed '/^$/d' |
 #   fzf-tmux -p
 
 current_session=$(tmux display-message -p '#S')
 line_number=$(tmux ls | grep -n "$current_session" | cut -d ':' -f 1)
 selected_session=$(tmux ls | cut -d ":" -f 1 | fzf-tmux -p --sync --bind "result:transform:[[ -z {fzf:query} ]] && echo \"pos($line_number)\"")
 
-if [[ -n "$selected_session"  ]]; then
+if [[ -n "$selected_session" ]]; then
   tmux switch-client -t "$selected_session"
 fi
-
-
 
 ######## I might not need this ########
 # # Check the exit status
