@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# --color=bg:#16161e \
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --border \
-  --cycle
+  --cycle \
+  --border='rounded' \
+  --border-label='Switch Sessions' \
+  --border-label-pos=top \
 "
 
 cleanup_and_exit() {
