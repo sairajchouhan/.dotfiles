@@ -26,9 +26,10 @@ keymap('n', 'N', 'Nzzzv', opts)
 keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
-keymap('n', '<leader>co', '<cmd>BufferLineCloseOthers<cr>', opts)
-keymap('n', '<Tab>', '<cmd>BufferLineCyclePrev<cr>', opts)
-keymap('n', '<S-Tab>', '<cmd>BufferLineCycleNext<cr>', opts)
+keymap('n', '<leader>co', '<cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
+
+keymap('n', '<Tab>', '<cmd>BufferNext<CR>', opts)
+keymap('n', '<S-Tab>', '<cmd>BufferPrevious<CR>', opts)
 
 -- for quickfix list
 keymap('n', '<leader>cn', ':cnext<CR>', opts_f { desc = 'Next item in quickfix list' })
