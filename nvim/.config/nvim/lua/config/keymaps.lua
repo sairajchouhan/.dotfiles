@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 local opts_f = function(more_opts)
   return vim.tbl_deep_extend('force', opts, more_opts)
 end
+
 local keymap = vim.keymap.set
 
 keymap('i', '<C-c>', '<ESC>', opts)
@@ -25,7 +26,7 @@ keymap('n', 'N', 'Nzzzv', opts)
 keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
--- keymap('n', '<leader>co', '<cmd>BufferLineCloseOthers<cr>', opts)
+keymap('n', '<leader>co', '<cmd>BufferLineCloseOthers<cr>', opts)
 keymap('n', '<Tab>', '<cmd>BufferLineCyclePrev<cr>', opts)
 keymap('n', '<S-Tab>', '<cmd>BufferLineCycleNext<cr>', opts)
 
@@ -33,7 +34,24 @@ keymap('n', '<S-Tab>', '<cmd>BufferLineCycleNext<cr>', opts)
 keymap('n', '<leader>cn', ':cnext<CR>', opts_f { desc = 'Next item in quickfix list' })
 keymap('n', '<leader>cp', ':cprevious<CR>', opts_f { desc = 'Previous item in quickfix list' })
 keymap('n', '<leader>co', ':copen<CR>', opts_f { desc = 'Open quickfix list' })
-keymap('n', '<leader>cc', ':cclose<CR>', opts_f { desc = 'Close quickfix list' })
+keymap('n', '<leader>cc', function()
+  local qf_exists = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win['quickfix'] == 1 then
+      qf_exists = true
+    end
+  end
+
+  if qf_exists then
+    vim.cmd ':cclose'
+  else
+    if not vim.tbl_isempty(vim.fn.getqflist()) then
+      vim.cmd 'copen'
+    else
+      print 'quickfix list is empty'
+    end
+  end
+end, opts_f { desc = 'Toggle quickfix list ' })
 
 keymap(
   'n',

@@ -5,7 +5,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.breakindent = true
@@ -21,7 +21,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '  ', trail = '·', nbsp = '␣' }
 vim.opt.fillchars = { eob = ' ' }
 vim.opt.inccommand = 'split'
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
@@ -41,7 +41,5 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
-
 -- removes adding new line at the end of file on save
 vim.opt.fixendofline = false
-

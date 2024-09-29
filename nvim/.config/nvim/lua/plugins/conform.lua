@@ -37,19 +37,24 @@ return {
         sh = { 'shfmt' },
       },
       format_on_save = function(bufnr)
-        local disable_filetypes =
-          { javascript = true, typescript = true, javascriptreact = true, typescriptreact = true }
+        local disable_filetypes = {
+          javascript = true,
+          typescript = true,
+          javascriptreact = true,
+          typescriptreact = true,
+          -- this is only for work, I think there should be a plugin to configure all these per project
+          css = true,
+          scss = true,
+        }
 
-        local lsp_format_opt
+
         if disable_filetypes[vim.bo[bufnr].filetype] then
-          lsp_format_opt = 'never'
-        else
-          lsp_format_opt = 'fallback'
+          return nil
         end
 
         return {
           timeout_ms = 500,
-          lsp_format = lsp_format_opt,
+          lsp_format = 'fallback',
         }
       end,
     }

@@ -1,6 +1,7 @@
 -- NOTE: this is deault config, get to know more about trouble
 return {
   'folke/trouble.nvim',
+  enabled = false,
   opts = {
     auto_close = true,
   },
