@@ -27,6 +27,7 @@ return {
         'css',
         'prisma',
         'gitignore',
+        'just',
       },
       auto_install = true,
       highlight = {
