@@ -75,6 +75,7 @@ alias say="fortune | cowsay"
 
 alias touch="retouch"
 alias mine="cd ~/mine"
+# alias code="zed"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 
 alias ":w"="echo \"bro what are you doing?\""
@@ -108,6 +109,10 @@ function cds () {
   else
     echo "Runs only inside Tmux"
   fi
+}
+
+function killport() {
+  lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill 
 }
 
 
@@ -153,3 +158,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun completions
+[ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
