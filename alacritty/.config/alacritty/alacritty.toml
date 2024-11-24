@@ -1,5 +1,3 @@
-import = ["~/.config/alacritty/themes/tokyonight_night.toml"]
-live_config_reload = true
 
 [window]
 decorations = "buttonless"
@@ -18,3 +16,7 @@ TERM = "xterm-256color"
 
 [colors]
 draw_bold_text_with_bright_colors = true
+
+[general]
+live_config_reload = true
+import = ["~/.config/alacritty/themes/tokyonight_night.toml"]

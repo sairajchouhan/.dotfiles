@@ -1,6 +1,8 @@
-if [[ -z $TMUX ]]; then
-  tmux a
-fi
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/sairaj.chouhan/.zsh/completions:"* ]]; then export FPATH="/Users/sairaj.chouhan/.zsh/completions:$FPATH"; fi
+# if [[ -z $TMUX ]]; then
+#   tmux a
+# fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -149,6 +151,8 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=separator:#ff9e64 \
   --color=spinner:#ff007c \
 "
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 
 # pnpm
@@ -161,3 +165,4 @@ esac
 
 # bun completions
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
+. "/Users/sairaj.chouhan/.deno/env"
