@@ -79,6 +79,7 @@ alias touch="retouch"
 alias mine="cd ~/mine"
 # alias code="zed"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
+alias builder="~/cs/visual-editor/builder.signore"
 
 alias ":w"="echo \"bro what are you doing?\""
 alias ".."="cd .."
@@ -166,3 +167,5 @@ esac
 # bun completions
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
 . "/Users/sairaj.chouhan/.deno/env"
+# Added by Windsurf
+export PATH="/Users/sairaj.chouhan/.codeium/windsurf/bin:$PATH"

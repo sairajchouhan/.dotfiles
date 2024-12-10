@@ -31,6 +31,10 @@ keymap('n', '<leader>co', '<cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
 keymap('n', '<Tab>', '<cmd>BufferNext<CR>', opts)
 keymap('n', '<S-Tab>', '<cmd>BufferPrevious<CR>', opts)
 
+keymap('n', '<space><space>x', '<cmd>source %<CR>')
+keymap('n', '<space>x', ':.lua<CR>')
+keymap('v', '<space>x', ':lua<CR>')
+
 -- for quickfix list
 keymap('n', '<leader>cn', ':cnext<CR>', opts_f { desc = 'Next item in quickfix list' })
 keymap('n', '<leader>cp', ':cprevious<CR>', opts_f { desc = 'Previous item in quickfix list' })
