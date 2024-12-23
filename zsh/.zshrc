@@ -79,7 +79,7 @@ alias touch="retouch"
 alias mine="cd ~/mine"
 # alias code="zed"
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
-alias builder="~/cs/visual-editor/builder.signore"
+alias builder="bun run ~/cs/builder-cli/src/index.ts"
 
 alias ":w"="echo \"bro what are you doing?\""
 alias ".."="cd .."
@@ -169,3 +169,4 @@ esac
 . "/Users/sairaj.chouhan/.deno/env"
 # Added by Windsurf
 export PATH="/Users/sairaj.chouhan/.codeium/windsurf/bin:$PATH"
+export COREPACK_ENABLE_AUTO_PIN=0
