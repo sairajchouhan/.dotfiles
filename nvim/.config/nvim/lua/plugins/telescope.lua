@@ -40,7 +40,6 @@ return {
         },
         find_files = {
           hidden = true,
-          theme = 'ivy',
         },
         lsp_references = {
           show_line = false,
