@@ -1,6 +1,7 @@
 return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
+  enabled = false,
   dependencies = {
     -- this is the snippet engine, the core of how snippets work, it's just necessary for snippets to work
     {

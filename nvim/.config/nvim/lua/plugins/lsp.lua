@@ -7,7 +7,7 @@ return {
 
     { 'j-hui/fidget.nvim', opts = {} },
 
-    'hrsh7th/cmp-nvim-lsp',
+    -- 'hrsh7th/cmp-nvim-lsp',
   },
   config = function()
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -124,9 +124,9 @@ return {
       end,
     })
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities =
-      vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities =
+    --   vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     --  Add any additional override configuration in the following tables. Available keys are:
     --  - cmd (table): Override the default command used to start the server
@@ -178,8 +178,8 @@ return {
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
-          server.capabilities =
-            vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+          local capabilities = require('blink.cmp').get_lsp_capabilities(server.capabilities)
+          server.capabilities = capabilities
           require('lspconfig')[server_name].setup(server)
         end,
       },
