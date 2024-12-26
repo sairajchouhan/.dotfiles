@@ -34,6 +34,10 @@ vim.keymap.set('n', '<leader>rn', function()
   vscode.action 'editor.action.rename'
 end)
 
+vim.keymap.set('n', '<leader>ca', function()
+  vscode.action 'editor.action.quickFix'
+end)
+
 vim.keymap.set('n', '[c', function()
   vscode.action 'workbench.action.editor.previousChange'
 end)
