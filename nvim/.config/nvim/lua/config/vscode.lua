@@ -72,4 +72,8 @@ vim.keymap.set('n', 'F', function()
   vscode.action 'editor.action.formatDocument'
 end)
 
+vim.keymap.set('n', '<leader>co', function()
+  vscode.action 'workbench.action.closeOtherEditors'
+end)
+
 return M
