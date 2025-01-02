@@ -25,6 +25,8 @@ local opts = { noremap = true, silent = true }
 keymap('n', '<cr>', '<cmd>noh<cr><cr>', opts)
 keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
+keymap('i', '<C-c>', '<ESC>', opts)
+keymap('n', '<C-c>', '<ESC>', opts)
 
 vim.keymap.set('n', 'gr', function()
   vscode.action 'editor.action.referenceSearch.trigger'
@@ -82,6 +84,18 @@ end)
 
 vim.keymap.set('n', '<S-Tab>', function()
   vscode.action 'workbench.action.previousEditorInGroup'
+end)
+
+vim.keymap.set('n', '<leader>ff', function()
+  vscode.action 'workbench.action.quickOpen'
+end)
+
+vim.keymap.set('n', '<leader>fg', function()
+  vscode.action 'workbench.view.search'
+end)
+
+vim.keymap.set('n', '<leader>e', function()
+  vscode.action 'workbench.action.toggleSidebarVisibility'
 end)
 
 return M
