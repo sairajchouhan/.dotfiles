@@ -58,7 +58,8 @@ end)
 
 -- show current line error
 vim.keymap.set('n', ';d', function()
-  vim.cmd.normal { '0', bang = true }
+  -- vim.cmd.normal { '0', bang = true }
+  -- vscode.action 'editor.action.marker.next'
   vscode.action 'editor.action.marker.next'
 end)
 
