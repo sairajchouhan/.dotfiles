@@ -82,8 +82,12 @@ alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 alias builder="bun run ~/cs/builder-cli/src/index.ts"
 
 alias ":w"="echo \"bro what are you doing?\""
-alias ".."="cd .."
-alias "..."="cd .. && cd .."
+# Directory navigation
+alias -g ..='cd ..'
+alias -g ...='cd ../..'
+alias -g ....='cd ../../..'
+alias -g .....='cd ../../../..'
+alias -g ......='cd ../../../../..'
 
 alias cedit="nvim ~/.config/"
 alias tedit="nvim ~/.config/tmux/tmux.conf"
@@ -112,10 +116,6 @@ function cds () {
   else
     echo "Runs only inside Tmux"
   fi
-}
-
-function killport() {
-  lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill 
 }
 
 
@@ -154,6 +154,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export COREPACK_ENABLE_AUTO_PIN=0
 
 
 # pnpm
@@ -166,8 +167,4 @@ esac
 
 # bun completions
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
-. "/Users/sairaj.chouhan/.deno/env"
-# Added by Windsurf
-export PATH="/Users/sairaj.chouhan/.codeium/windsurf/bin:$PATH"
-export COREPACK_ENABLE_AUTO_PIN=0
 

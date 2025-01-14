@@ -1,24 +1,3 @@
-local function merge_highlights(current, new)
-  -- Convert decimal fg to hex if it exists
-  if current.fg then
-    new.fg = string.format('#%06x', current.fg)
-  end
-
-  -- Copy non-color attributes
-  return vim.tbl_extend(
-    'force',
-    vim.tbl_filter(function(k)
-      return k ~= 'fg' and k ~= 'bg'
-    end, current),
-    new
-  )
-end
-
-local highlights = {
-  BlinkCmpMenu = { bg = '#000000' },
-  BlinkCmpMenuBorder = { fg = '#0db9d7' },
-}
-
 return {
   'saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
@@ -75,10 +54,5 @@ return {
 
     luasnip.config.setup {}
     require('luasnip.loaders.from_vscode').lazy_load()
-
-    for group, colors in pairs(highlights) do
-      local current = vim.api.nvim_get_hl(0, { name = group })
-      vim.api.nvim_set_hl(0, group, merge_highlights(current, colors))
-    end
   end,
 }
