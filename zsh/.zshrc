@@ -82,6 +82,7 @@ alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 alias builder="bun run ~/cs/builder-cli/src/index.ts"
 
 alias ":w"="echo \"bro what are you doing?\""
+alias ":q"="exit"
 # Directory navigation
 alias -g ..='cd ..'
 alias -g ...='cd ../..'
@@ -168,3 +169,6 @@ esac
 # bun completions
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sairaj.chouhan/.lmstudio/bin"
