@@ -1,6 +1,3 @@
-local builtin = require 'telescope.builtin'
-local actions = require 'telescope.actions'
-
 return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
@@ -15,6 +12,9 @@ return {
     },
   },
   config = function()
+    local builtin = require 'telescope.builtin'
+    local actions = require 'telescope.actions'
+
     require('telescope').setup {
       defaults = {
         sorting_strategy = 'ascending',
