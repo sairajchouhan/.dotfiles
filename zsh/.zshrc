@@ -70,6 +70,7 @@ alias rm="trash"
 alias lg="lazygit"
 alias pr="gh pr create -w"
 alias gc="git commit"
+alias kp="kill-port"
 
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
@@ -83,12 +84,8 @@ alias builder="bun run ~/cs/builder-cli/src/index.ts"
 
 alias ":w"="echo \"bro what are you doing?\""
 alias ":q"="exit"
-# Directory navigation
-alias -g ..='cd ..'
-alias -g ...='cd ../..'
-alias -g ....='cd ../../..'
-alias -g .....='cd ../../../..'
-alias -g ......='cd ../../../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 alias cedit="nvim ~/.config/"
 alias tedit="nvim ~/.config/tmux/tmux.conf"
@@ -172,3 +169,4 @@ esac
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/sairaj.chouhan/.lmstudio/bin"
+export PATH="/Users/sairaj.chouhan/.bun/bin:$PATH"
