@@ -13,7 +13,12 @@ return {
     dashboard = {
       enabled = true,
     },
-    gitbrowse = { enabled = true },
+    gitbrowse = {
+      enabled = true,
+    },
+    git = {
+      enabled = true,
+    },
   },
   keys = {
     {
