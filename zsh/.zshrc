@@ -84,14 +84,18 @@ alias builder="bun run ~/cs/builder-cli/src/index.ts"
 
 alias ":w"="echo \"bro what are you doing?\""
 alias ":q"="exit"
-alias ..='cd ..'
-alias ...='cd ../..'
 
 alias cedit="nvim ~/.config/"
 alias tedit="nvim ~/.config/tmux/tmux.conf"
 alias zedit="nvim ~/.zshrc"
 alias nedit="nvim ~/.config/nvim/"
+alias shebang='echo "#!/usr/bin/env bash"'
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
 function t(){
   local session_name=$(basename "$PWD" | tr '.' '-')
@@ -170,3 +174,7 @@ esac
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/sairaj.chouhan/.lmstudio/bin"
 export PATH="/Users/sairaj.chouhan/.bun/bin:$PATH"
+# Added by Windsurf
+export PATH="/Users/sairaj.chouhan/.codeium/windsurf/bin:$PATH"
+export PATH="$PATH:/Users/sairaj.chouhan/mine/bin"
+export PATH="$HOME/.govm/shim:$PATH"
