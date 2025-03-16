@@ -67,6 +67,15 @@ return {
         follow_current_file = {
           enabled = true,
         },
+        find_command = 'fd',
+        find_args = {
+          fd = {
+            '--exclude',
+            '.git',
+            '--exclude',
+            'node_modules',
+          },
+        },
       },
       window = {
         mappings = {

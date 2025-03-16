@@ -99,4 +99,8 @@ vim.keymap.set('n', '<leader>e', function()
   vscode.action 'workbench.action.toggleSidebarVisibility'
 end)
 
+vim.keymap.set('n', '<leader>fR', function()
+  vscode.action 'copyRelativeFilePath'
+end)
+
 return M
