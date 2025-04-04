@@ -1,3 +1,4 @@
 *.signore
+*.raj
 .nvim/
 raj/

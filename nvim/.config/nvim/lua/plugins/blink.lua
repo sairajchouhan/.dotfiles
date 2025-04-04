@@ -26,8 +26,6 @@ return {
       },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
-        -- disables command line auto completion
-        cmdline = {},
       },
       completion = {
         menu = { border = 'rounded' },
