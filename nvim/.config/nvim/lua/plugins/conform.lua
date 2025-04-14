@@ -45,8 +45,8 @@ return {
           -- this is only for work, I think there should be a plugin to configure all these per project
           css = true,
           scss = true,
+          c = true,
         }
-
 
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil

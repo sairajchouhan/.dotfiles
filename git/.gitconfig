@@ -30,3 +30,6 @@
     helper = !/opt/homebrew/bin/gh auth git-credential
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	cp = cherry-pick
+[init]
+	templatedir = /Users/sairaj.chouhan/.git-template
