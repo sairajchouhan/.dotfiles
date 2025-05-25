@@ -79,12 +79,12 @@ vim.keymap.set('n', '<leader>co', function()
   vscode.action 'workbench.action.closeOtherEditors'
 end)
 
-vim.keymap.set('n', '<Tab>', function()
-  vscode.action 'workbench.action.nextEditorInGroup'
+vim.keymap.set('n', '[f', function()
+  vscode.action 'workbench.action.previousEditorInGroup'
 end)
 
-vim.keymap.set('n', '<S-Tab>', function()
-  vscode.action 'workbench.action.previousEditorInGroup'
+vim.keymap.set('n', ']f', function()
+  vscode.action 'workbench.action.nextEditorInGroup'
 end)
 
 vim.keymap.set('n', '<leader>ff', function()

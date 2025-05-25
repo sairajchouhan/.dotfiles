@@ -78,7 +78,7 @@ alias say="fortune | cowsay"
 
 alias touch="retouch"
 alias mine="cd ~/mine"
-# alias code="zed"
+
 alias lazygit="CONFIG_DIR=$HOME/.config/lazygit lazygit"
 alias builder="bun run ~/cs/builder-cli/src/index.ts"
 

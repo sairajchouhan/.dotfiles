@@ -28,8 +28,8 @@ keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
 keymap('n', '<leader>co', '<cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
 
-keymap('n', '<Tab>', '<cmd>BufferNext<CR>', opts)
-keymap('n', '<S-Tab>', '<cmd>BufferPrevious<CR>', opts)
+keymap('n', '[f', '<cmd>BufferPrevious<CR>', opts)
+keymap('n', ']f', '<cmd>BufferNext<CR>', opts)
 
 keymap('n', '<space><space>x', '<cmd>source %<CR>')
 keymap('n', '<space>x', ':.lua<CR>')
