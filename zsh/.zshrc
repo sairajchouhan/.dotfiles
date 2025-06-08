@@ -171,10 +171,6 @@ esac
 [ -s "/Users/sairaj.chouhan/.bun/_bun" ] && source "/Users/sairaj.chouhan/.bun/_bun"
 
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/sairaj.chouhan/.lmstudio/bin"
 export PATH="/Users/sairaj.chouhan/.bun/bin:$PATH"
-# Added by Windsurf
-export PATH="/Users/sairaj.chouhan/.codeium/windsurf/bin:$PATH"
 export PATH="$PATH:/Users/sairaj.chouhan/mine/bin"
 export PATH="$HOME/.govm/shim:$PATH"
