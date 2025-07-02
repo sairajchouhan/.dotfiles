@@ -1,56 +1,55 @@
 return {
   'saghen/blink.cmp',
-  -- optional: provides snippets for the snippet source
-  dependencies = {
-    'rafamadriz/friendly-snippets',
-    {
-      'L3MON4D3/LuaSnip',
-      version = 'v2.*',
+  dependencies = { 'rafamadriz/friendly-snippets' },
+  version = '1.*',
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    keymap = { preset = 'enter' },
+    appearance = {
+      nerd_font_variant = 'mono',
     },
+    completion = {
+      menu = {
+        border = 'rounded',
+        draw = {
+          columns = {
+            { 'kind_icon' },
+            { 'label', 'label_description', gap = 1 },
+            -- { 'source_name' },
+          },
+          components = {
+            -- source_name = {
+            --   text = function(ctx)
+            --     return '[' .. ctx.source_name .. ']'
+            --   end,
+            -- },
+          },
+        },
+      },
+      documentation = {
+        window = { border = 'rounded' },
+        auto_show = true,
+        -- auto_show_delay_ms = 200,
+      },
+      ghost_text = { enabled = true },
+      list = {
+        selection = {
+          auto_insert = false,
+        },
+      },
+      accept = {
+        auto_brackets = {
+          enabled = false,
+        },
+      },
+    },
+    signature = { window = { border = 'rounded' }, enabled = true },
+    snippets = { preset = 'luasnip' },
+    sources = {
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+    fuzzy = { implementation = 'prefer_rust_with_warning' },
   },
-  version = '*',
   opts_extend = { 'sources.default' },
-  config = function()
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
-    local opts = {
-      -- 'default' for mappings similar to built-in completion
-      -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-      -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-      -- See the full "keymap" documentation for information on defining your own keymap.
-      keymap = { preset = 'enter' },
-
-      appearance = {
-        -- use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'mono',
-      },
-      sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
-      },
-      completion = {
-        menu = { border = 'rounded' },
-      },
-      signature = { enabled = true, window = { border = 'rounded' } },
-      snippets = {
-        expand = function(snippet)
-          require('luasnip').lsp_expand(snippet)
-        end,
-        active = function(filter)
-          if filter and filter.direction then
-            return require('luasnip').jumpable(filter.direction)
-          end
-          return require('luasnip').in_snippet()
-        end,
-        jump = function(direction)
-          require('luasnip').jump(direction)
-        end,
-      },
-    }
-    require('blink-cmp').setup(opts)
-
-    local luasnip = require 'luasnip'
-
-    luasnip.config.setup {}
-    require('luasnip.loaders.from_vscode').lazy_load()
-  end,
 }

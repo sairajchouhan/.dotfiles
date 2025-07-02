@@ -132,7 +132,7 @@ return {
       --
       -- TODO: have to check how useful this is https://github.com/pmizio/typescript-tools.nvim
       rust_analyzer = {},
-      ts_ls = {},
+      vtsls = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},

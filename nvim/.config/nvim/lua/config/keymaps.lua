@@ -27,6 +27,8 @@ keymap('n', 'x', '"_x', opts) -- do not yank on x
 keymap('v', 'p', '"_dP', opts) -- do not update the register on paste
 
 keymap('n', '<leader>co', '<cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
+keymap('n', '<leader>cr', '<cmd>BufferCloseBuffersRight<CR>', opts)
+keymap('n', '<leader>cl', '<cmd>BufferCloseBuffersLeft<CR>', opts)
 
 keymap('n', '[f', '<cmd>BufferPrevious<CR>', opts)
 keymap('n', ']f', '<cmd>BufferNext<CR>', opts)

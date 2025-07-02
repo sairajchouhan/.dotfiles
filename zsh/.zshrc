@@ -71,6 +71,8 @@ alias lg="lazygit"
 alias pr="gh pr create -w"
 alias gc="git commit"
 alias kp="kill-port"
+alias no="curl -s https://naas.isalman.dev/no | jq ".reason""
+
 
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
@@ -156,7 +158,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export COREPACK_ENABLE_AUTO_PIN=0
+# export COREPACK_ENABLE_AUTO_PIN=0
 
 
 # pnpm
