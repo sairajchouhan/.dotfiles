@@ -197,6 +197,10 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 [[on-window-detected]]
+if.app-id = 'pl.maketheweb.cleanshotx'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 2'
 

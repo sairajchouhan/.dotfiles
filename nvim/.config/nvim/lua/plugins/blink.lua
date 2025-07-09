@@ -32,7 +32,7 @@ return {
         auto_show = true,
         -- auto_show_delay_ms = 200,
       },
-      ghost_text = { enabled = true },
+      ghost_text = { enabled = false },
       list = {
         selection = {
           auto_insert = false,

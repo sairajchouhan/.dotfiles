@@ -21,9 +21,9 @@ return {
     conform.setup {
       formatters_by_ft = {
         javascript = { 'prettierd' },
-        typescript = { 'prettierd' },
         javascriptreact = { 'prettierd' },
-        typescriptreact = { 'prettierd' },
+        typescript = { 'biome' },
+        typescriptreact = { 'biome' },
         svelte = { 'prettierd' },
         css = { 'prettierd' },
         html = { 'prettierd' },
