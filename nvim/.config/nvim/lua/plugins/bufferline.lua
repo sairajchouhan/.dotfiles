@@ -4,10 +4,9 @@ return {
   event = "VeryLazy",
   keys = {
     { "<leader>fp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
-    { "<leader>fP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
-    { "<leader>fr", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
-    { "<leader>fl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
-    { "<leader>co", "<Cmd>BufferLineCloseOthers<CR>", desc = "Delete Buffers to the Left" },
+    { "<leader>co", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+    { "<leader>cr", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
+    { "<leader>cl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
     { "[f", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
     { "]f", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
     { "[F", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
