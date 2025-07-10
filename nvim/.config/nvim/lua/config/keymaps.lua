@@ -8,6 +8,12 @@ vim.keymap.set({ "n", "v" }, "F", function()
   LazyVim.format({ force = true })
 end)
 
+vim.keymap.set("n", ";d", function()
+  vim.diagnostic.open_float({
+    scope = "line",
+  })
+end, { desc = "Show line diagnostics" })
+
 vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>", opts)
 
 -- https://www.lazyvim.org/keymaps#bufferlinenvim
