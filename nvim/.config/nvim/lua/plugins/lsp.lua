@@ -9,5 +9,8 @@ return {
         [vim.diagnostic.severity.INFO] = "I",
       },
     },
+    inlay_hints = {
+      enabled = false,
+    },
   },
 }
