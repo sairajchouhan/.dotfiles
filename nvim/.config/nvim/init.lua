@@ -1,10 +1,7 @@
 if vim.g.vscode then
-  require 'config.vscode'
+  require("vscode")
   return
 end
 
-require 'config.utils'
-require 'config.opts'
-require 'config.global'
-require 'config.keymaps'
-require 'config.lazy'
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
