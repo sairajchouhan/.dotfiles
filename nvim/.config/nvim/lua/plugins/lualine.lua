@@ -11,23 +11,25 @@ return {
       vim.o.laststatus = 0
     end
   end,
-  opts = function()
-    local opts = {
-      options = {
-        theme = "tokyonight",
-        icons_enabled = false,
-      },
-      -- remove disagnostics symbols
-      sections = {
-        lualine_c = {
-          {
-            "diagnostics",
-            symbols = {},
-          },
+  opts = {
+    options = {
+      theme = "tokyonight",
+      icons_enabled = false,
+    },
+    -- remove disagnostics symbols
+    sections = {
+      lualine_c = {
+        {
+          "diagnostics",
+          symbols = {},
         },
       },
-      extensions = { "neo-tree", "lazy", "fzf", "mason", "trouble" },
-    }
-    return opts
-  end,
+      lualine_z = {
+        function()
+          return os.date("%R")
+        end,
+      },
+    },
+    extensions = { "neo-tree", "lazy", "fzf", "mason", "trouble" },
+  },
 }
