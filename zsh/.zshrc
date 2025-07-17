@@ -22,6 +22,9 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
+
 zinit snippet OMZP::git
 
 
@@ -126,7 +129,8 @@ function cds () {
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+# eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/tokyonight_storm.omp.json)"
+# eval "$(starship init zsh)"
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
 
@@ -176,3 +180,20 @@ esac
 export PATH="/Users/sairaj.chouhan/.bun/bin:$PATH"
 export PATH="$PATH:/Users/sairaj.chouhan/mine/bin"
 export PATH="$HOME/.govm/shim:$PATH"
+
+
+PURE_GIT_STASH_SYMBOL=""
+
+#
+# autoload -U promptinit; promptinit
+# # optionally define some options
+# PURE_CMD_MAX_EXEC_TIME=10
+# # change the path color
+# # zstyle :prompt:pure:path color white
+# # # change the color for both `prompt:success` and `prompt:error`
+# # zstyle ':prompt:pure:prompt:*' color cyan
+# # turn on git stash status
+# zstyle :prompt:pure:git:stash show yes
+#
+# prompt pure
+#
