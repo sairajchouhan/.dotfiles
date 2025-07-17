@@ -2,3 +2,4 @@
 *.raj
 .nvim/
 raj/
+temp.ts

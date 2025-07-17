@@ -89,8 +89,8 @@ alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
+alt-j = 'focus down --boundaries-action wrap-around-the-workspace --ignore-floating'
+alt-k = 'focus up --boundaries-action wrap-around-the-workspace --ignore-floating'
 alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
@@ -197,14 +197,6 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 [[on-window-detected]]
-if.app-id = 'pl.maketheweb.cleanshotx'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 1'
 
@@ -212,17 +204,23 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace 1'
 
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = 'move-node-to-workspace 2'
+
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-if.app-id = 'notion.id'
+if.app-id = 'us.zoom.xos'
 run = 'move-node-to-workspace 3'
 
-[[on-window-detected]]
-if.app-id = 'com.todoist.mac.Todoist'
-run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
 if.app-id = 'com.1password.1password'
@@ -230,4 +228,8 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'pl.maketheweb.cleanshotx'
 run = 'layout floating'

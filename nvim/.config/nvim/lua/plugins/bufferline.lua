@@ -4,7 +4,8 @@ return {
   event = "VeryLazy",
   keys = {
     { "<leader>fp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
-    { "<leader>co", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+    -- { "<leader>co", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+    { "<leader>co", "<Cmd>BufferLineCloseOthers<CR>", desc = "Delete Non-Pinned Buffers" },
     { "<leader>cr", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
     { "<leader>cl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
     { "[f", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
@@ -20,8 +21,20 @@ return {
       end,
     },
   },
-  config = function(_, opts)
-    require("bufferline").setup(opts)
+  config = function(_)
+    local bufferline = require("bufferline")
+
+    local opts = {
+      options = {
+        always_show_bufferline = false,
+        diagnostics_indicator = function()
+          return ""
+        end,
+        style_preset = { bufferline.style_preset.no_italic, bufferline.style_preset.minimal },
+      },
+    }
+
+    bufferline.setup(opts)
     -- Fix bufferline when restoring a session
     vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
       callback = function()
