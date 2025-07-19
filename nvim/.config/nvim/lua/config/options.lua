@@ -5,3 +5,4 @@
 vim.g.snacks_animate = false
 vim.opt.signcolumn = "yes:2"
 vim.opt.swapfile = false
+vim.o.winborder = "rounded"
