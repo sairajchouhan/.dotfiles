@@ -79,11 +79,11 @@ vim.keymap.set("n", "<leader>co", function()
   vscode.action("workbench.action.closeOtherEditors")
 end)
 
-vim.keymap.set("n", "[f", function()
+vim.keymap.set("n", "<S-h>", function()
   vscode.action("workbench.action.previousEditorInGroup")
 end)
 
-vim.keymap.set("n", "]f", function()
+vim.keymap.set("n", "<S-l>", function()
   vscode.action("workbench.action.nextEditorInGroup")
 end)
 

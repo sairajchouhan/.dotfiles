@@ -79,6 +79,7 @@ alias no="curl -s https://naas.isalman.dev/no | jq ".reason""
 
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
+alias gcp="git add -p"
 alias say="fortune | cowsay"
 
 alias touch="retouch"
