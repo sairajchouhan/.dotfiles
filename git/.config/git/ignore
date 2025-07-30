@@ -3,3 +3,4 @@
 .nvim/
 raj/
 temp.ts
+.lazy.lua
