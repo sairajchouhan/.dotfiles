@@ -37,3 +37,8 @@
 
 [init]
 	templatedir = /Users/sairaj.chouhan/.git-template
+
+[merge]
+	tool = cursor
+[mergetool "cursor"]
+	cmd = "cursor --wait --merge $REMOTE $LOCAL $BASE $MERGED"
