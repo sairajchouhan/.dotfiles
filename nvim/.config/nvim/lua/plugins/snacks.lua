@@ -8,5 +8,12 @@ return {
       end,
       desc = "Grep",
     },
+    {
+      "<leader>fw",
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = "Grep",
+    },
   },
 }

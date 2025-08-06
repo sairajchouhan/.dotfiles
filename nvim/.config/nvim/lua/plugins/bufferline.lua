@@ -1,4 +1,3 @@
--- TODO: show other buffers except current one in italics currently it's opposite
 return {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
