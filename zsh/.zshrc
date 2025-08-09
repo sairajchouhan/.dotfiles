@@ -72,9 +72,10 @@ alias cs="cd ~/cs"
 alias rm="trash"
 alias lg="lazygit"
 alias pr="gh pr create -w"
-alias gc="git commit"
 alias kp="kill-port"
 alias no="curl -s https://naas.isalman.dev/no | jq ".reason""
+alias ca="cursor-agent ."
+
 
 
 alias cat="bat --paging=never"
@@ -198,3 +199,4 @@ PURE_GIT_STASH_SYMBOL=""
 #
 # prompt pure
 #
+export PATH="$HOME/.local/bin:$PATH"
