@@ -4,4 +4,9 @@
 raj/
 temp.ts
 .lazy.lua
+.claude/
+CLAUDE.md
 GEMINI.md
+.cursor/
+.docs/
+AGENTS.md

@@ -66,6 +66,7 @@ alias s="source ~/.zshrc"
 alias n="nvim"
 alias c="clear"
 alias l="eza -l --icons --all"
+alias x="bunx"
 
 alias ls="eza"
 alias cs="cd ~/cs"
@@ -74,9 +75,7 @@ alias lg="lazygit"
 alias pr="gh pr create -w"
 alias kp="kill-port"
 alias no="curl -s https://naas.isalman.dev/no | jq ".reason""
-alias ca="cursor-agent ."
-
-
+alias ca="cursor-agent"
 
 alias cat="bat --paging=never"
 alias gcm="git commit -m"
@@ -129,10 +128,9 @@ function cds () {
 
 
 # Shell integrations
+eval "$(~/.local/bin/mise activate zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-# eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/tokyonight_storm.omp.json)"
-# eval "$(starship init zsh)"
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
 
@@ -183,20 +181,35 @@ export PATH="/Users/sairaj.chouhan/.bun/bin:$PATH"
 export PATH="$PATH:/Users/sairaj.chouhan/mine/bin"
 export PATH="$HOME/.govm/shim:$PATH"
 
+export PURE_GIT_STASH_SYMBOL=""
 
-PURE_GIT_STASH_SYMBOL=""
-
-#
-# autoload -U promptinit; promptinit
-# # optionally define some options
-# PURE_CMD_MAX_EXEC_TIME=10
-# # change the path color
-# # zstyle :prompt:pure:path color white
-# # # change the color for both `prompt:success` and `prompt:error`
-# # zstyle ':prompt:pure:prompt:*' color cyan
-# # turn on git stash status
-# zstyle :prompt:pure:git:stash show yes
-#
-# prompt pure
-#
 export PATH="$HOME/.local/bin:$PATH"
+export HUSKY=0
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# opencode
+export PATH=/Users/sairaj.chouhan/.opencode/bin:$PATH
+
+
+source ~/.envvars
+
+
+autoload -U add-zsh-hook
+
+function add_node_modules_to_path() {
+  if [[ -d "./node_modules/.bin" ]]; then
+    if [[ ":$PATH:" != *":./node_modules/.bin:"* ]]; then
+      export PATH="./node_modules/.bin:$PATH"
+    fi
+  fi
+}
+
+add-zsh-hook chpwd add_node_modules_to_path
+add_node_modules_to_path
+
+# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+
+alias claude="/Users/sairaj.chouhan/.claude/local/claude"
