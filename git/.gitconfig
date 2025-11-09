@@ -37,9 +37,13 @@
   s = "switch"
 
 [init]
-	templatedir = /Users/sairaj.chouhan/.git-template
+  templatedir = /Users/sairaj.chouhan/.git-template
+  defaultBranch = master
 
 [merge]
 	tool = cursor
 [mergetool "cursor"]
 	cmd = "cursor --wait --merge $REMOTE $LOCAL $BASE $MERGED"
+
+[coderabbit]
+	machineId = cli/46afc33ba21548b3ac98f0927445c502
