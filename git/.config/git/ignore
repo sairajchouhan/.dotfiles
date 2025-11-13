@@ -1,5 +1,6 @@
 *.signore
 *.raj
+*.raj.ts
 .nvim/
 raj/
 temp.ts
