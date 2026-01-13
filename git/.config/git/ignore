@@ -3,6 +3,7 @@
 *.raj.ts
 .nvim/
 raj/
+.raj/
 temp.ts
 .lazy.lua
 .claude/
@@ -11,3 +12,5 @@ GEMINI.md
 .cursor/
 .docs/
 AGENTS.md
+.envrc
+opencode.json

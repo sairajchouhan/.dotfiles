@@ -8,6 +8,7 @@ lazygit = "0.54.2"
 zoxide = "0.9.8"
 hyperfine = "1.19.0"
 "npm:@antfu/ni" = "25.0.0"
+go = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = []

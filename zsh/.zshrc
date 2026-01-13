@@ -22,14 +22,31 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+# # Pure prompt - Gruvbox theme colors
+# zmodload zsh/nearcolor
+# zstyle :prompt:pure:path color '#d79921'                    # yellow
+# zstyle :prompt:pure:git:branch color '#8ec07c'              # aqua
+# zstyle :prompt:pure:prompt:success color '#b8bb26'         # green
+# zstyle :prompt:pure:prompt:error color '#fb4934'           # red
+# zstyle :prompt:pure:execution_time color '#fe8019'         # orange
+# zstyle :prompt:pure:user color '#fabd2f'                    # bright yellow
+# zstyle :prompt:pure:host color '#fabd2f'                    # bright yellow
+# zstyle :prompt:pure:git:stash color '#d3869b'              # purple
+# zstyle :prompt:pure:git:action color '#fe8019'             # orange
+
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light sindresorhus/pure
 
 zinit snippet OMZP::git
 
 
-# Load completions
-autoload -Uz compinit && compinit
+# Load completions with cache (faster startup)
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zinit cdreplay -q
 
 
@@ -132,33 +149,34 @@ eval "$(~/.local/bin/mise activate zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
-
+eval "$(starship init zsh)"
 
 # exports
 export EDITOR="nvim"
-# export BAT_THEME="Dracula"
+export BAT_THEME="gruvbox-dark"
+export EZA_CONFIG_DIR="$HOME/.config/eza"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \
   --info=inline-right \
   --ansi \
   --layout=reverse \
   --border=none
-  --color=bg+:#283457 \
-  --color=bg:#000000 \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+  --color=bg+:#3c3836 \
+  --color=bg:#282828 \
+  --color=border:#504945 \
+  --color=fg:#ebdbb2 \
+  --color=gutter:#282828 \
+  --color=header:#fe8019 \
+  --color=hl+:#fabd2f \
+  --color=hl:#d79921 \
+  --color=info:#83a598 \
+  --color=marker:#fb4934 \
+  --color=pointer:#fb4934 \
+  --color=prompt:#b8bb26 \
+  --color=query:#ebdbb2:regular \
+  --color=scrollbar:#504945 \
+  --color=separator:#fe8019 \
+  --color=spinner:#fb4934 \
 "
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -179,16 +197,17 @@ esac
 
 export PATH="/Users/sairaj.chouhan/.bun/bin:$PATH"
 export PATH="$PATH:/Users/sairaj.chouhan/mine/bin"
-export PATH="$HOME/.govm/shim:$PATH"
-
-export PURE_GIT_STASH_SYMBOL=""
-
+# export PATH="$HOME/.govm/shim:$PATH"
+export PATH="$PATH:/Applications/WebStorm.app/Contents/MacOS"
 export PATH="$HOME/.local/bin:$PATH"
+# export PURE_GIT_STASH_SYMBOL=""
 export HUSKY=0
 export HOMEBREW_NO_AUTO_UPDATE=1
-
 # opencode
 export PATH=/Users/sairaj.chouhan/.opencode/bin:$PATH
+# Added by Antigravity
+export PATH="/Users/sairaj.chouhan/.antigravity/antigravity/bin:$PATH"
+export DISABLE_AUTOUPDATER=1 # auto updates claude code
 
 
 source ~/.envvars
@@ -207,9 +226,5 @@ function add_node_modules_to_path() {
 add-zsh-hook chpwd add_node_modules_to_path
 add_node_modules_to_path
 
-# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-
-
-alias claude="/Users/sairaj.chouhan/.claude/local/claude"
+# Amp CLI
+export PATH="/Users/sairaj.chouhan/.amp/bin:$PATH"
