@@ -1,8 +1,4 @@
-# Add deno completions to search path
 if [[ ":$FPATH:" != *":/Users/sairaj.chouhan/.zsh/completions:"* ]]; then export FPATH="/Users/sairaj.chouhan/.zsh/completions:$FPATH"; fi
-# if [[ -z $TMUX ]]; then
-#   tmux a
-# fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -21,21 +17,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-
-# # Pure prompt - Gruvbox theme colors
-# zmodload zsh/nearcolor
-# zstyle :prompt:pure:path color '#d79921'                    # yellow
-# zstyle :prompt:pure:git:branch color '#8ec07c'              # aqua
-# zstyle :prompt:pure:prompt:success color '#b8bb26'         # green
-# zstyle :prompt:pure:prompt:error color '#fb4934'           # red
-# zstyle :prompt:pure:execution_time color '#fe8019'         # orange
-# zstyle :prompt:pure:user color '#fabd2f'                    # bright yellow
-# zstyle :prompt:pure:host color '#fabd2f'                    # bright yellow
-# zstyle :prompt:pure:git:stash color '#d3869b'              # purple
-# zstyle :prompt:pure:git:action color '#fe8019'             # orange
-
-# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-# zinit light sindresorhus/pure
 
 zinit snippet OMZP::git
 
