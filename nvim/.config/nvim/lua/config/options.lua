@@ -5,7 +5,7 @@
 vim.g.snacks_animate = false
 vim.opt.signcolumn = "yes:2"
 vim.opt.swapfile = false
-vim.g.lazyvim_prettier_needs_config = true
 vim.o.exrc = true
 vim.o.secure = true
--- vim.o.winborder = "rounded"
+vim.o.winborder = "rounded"
+vim.opt.cursorcolumn = false

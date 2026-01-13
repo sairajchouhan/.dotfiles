@@ -1,0 +1,57 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Sairaj Chouhan"
+
+[[--scope]]
+--when.repositories = ["~/cs"]
+[--scope.user]
+email = "sairaj.chouhan@contentstack.com"
+[--scope.template-aliases]
+'format_short_signature(signature)' = 'signature.email().local()'
+
+[[--scope]]
+--when.repositories = ["~/mine", "~"]
+[--scope.user]
+email = "mail@sairaj.me"
+
+[ui]
+pager = ["delta"]
+diff-formatter = ":git"
+diff-editor = ":builtin"
+default-command = ["log-recent", "--no-pager", "--limit=7"]
+merge-editor = "webstorm"
+
+[merge-tools.cursor]
+program = "/Applications/Cursor.app/Contents/MacOS/Cursor"
+merge-args = ["-w", "--merge", "$base", "$left", "$right", "$output"]
+
+[merge-tools.webstorm]
+program = "webstorm"
+merge-args = ["merge", "$left", "$right", "$base", "$output"]
+
+[merge-tools.meld]
+program = "meld"
+merge-args = ["$left", "$base", "$right", "--output", "$output"] 
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+log-recent = ["log", "-r", "default() & recent()"]
+pr = ["util", "exec", "--", "bash", "-c", """
+gh pr create --web --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)
+"""]
+
+[git]
+push-new-bookmarks = true
+private = "description(glob:'private:*')"
+
+[revset-aliases]
+'default()' = 'coalesce(trunk(),root())::present(@) | ancestors(visible_heads() & recent(), 4)'
+'recent()' = 'committer_date(after:"1 month ago")'
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'private()' = "description(glob:'private:*')"
+
+[template-aliases]
+"format_timestamp(timestamp)" = "timestamp.local().format('%d/%m/%Y - %H:%M:%S')"
+# 'format_short_signature(signature)' = 'signature.email().local()'
+'format_short_change_id(id)' = 'id.shortest()'
