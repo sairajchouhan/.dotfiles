@@ -189,6 +189,7 @@ export PATH=/Users/sairaj.chouhan/.opencode/bin:$PATH
 # Added by Antigravity
 export PATH="/Users/sairaj.chouhan/.antigravity/antigravity/bin:$PATH"
 export DISABLE_AUTOUPDATER=1 # auto updates claude code
+export PATH="/Users/sairaj.chouhan/.cargo/bin:$PATH"
 
 
 source ~/.envvars

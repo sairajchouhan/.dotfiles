@@ -43,7 +43,7 @@ gh pr create --web --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-
 
 [git]
 push-new-bookmarks = true
-private = "description(glob:'private:*')"
+private-commits = "description(glob:'private:*')"
 
 [revset-aliases]
 'default()' = 'coalesce(trunk(),root())::present(@) | ancestors(visible_heads() & recent(), 4)'
