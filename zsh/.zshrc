@@ -203,35 +203,6 @@ zsh-rebuild-cache() {
 [[ -f "$ZSH_CACHE_DIR/zoxide.zsh" ]] && source "$ZSH_CACHE_DIR/zoxide.zsh"
 [[ -f "$ZSH_CACHE_DIR/starship.zsh" ]] && source "$ZSH_CACHE_DIR/starship.zsh"
 
-# Check for stale caches (tool binary newer than cache file)
-_zsh_check_stale_caches() {
-  local stale_tools=()
-
-  # Check each tool: if binary is newer than cache, it's stale
-  [[ -x ~/.local/bin/mise ]] && [[ -f "$ZSH_CACHE_DIR/mise.zsh" ]] && \
-    [[ ~/.local/bin/mise -nt "$ZSH_CACHE_DIR/mise.zsh" ]] && stale_tools+=(mise)
-
-  local fzf_bin=$(command -v fzf 2>/dev/null)
-  [[ -n "$fzf_bin" ]] && [[ -f "$ZSH_CACHE_DIR/fzf.zsh" ]] && \
-    [[ "$fzf_bin" -nt "$ZSH_CACHE_DIR/fzf.zsh" ]] && stale_tools+=(fzf)
-
-  local zoxide_bin=$(command -v zoxide 2>/dev/null)
-  [[ -n "$zoxide_bin" ]] && [[ -f "$ZSH_CACHE_DIR/zoxide.zsh" ]] && \
-    [[ "$zoxide_bin" -nt "$ZSH_CACHE_DIR/zoxide.zsh" ]] && stale_tools+=(zoxide)
-
-  local starship_bin=$(command -v starship 2>/dev/null)
-  [[ -n "$starship_bin" ]] && [[ -f "$ZSH_CACHE_DIR/starship.zsh" ]] && \
-    [[ "$starship_bin" -nt "$ZSH_CACHE_DIR/starship.zsh" ]] && stale_tools+=(starship)
-
-  if (( ${#stale_tools[@]} > 0 )); then
-    echo "\033[33m[zsh] Stale cache detected for: ${stale_tools[*]}\033[0m"
-    echo "\033[33m      Run 'zsh-rebuild-cache' to update\033[0m"
-  fi
-}
-
-# Run check in background to not slow down startup
-{ _zsh_check_stale_caches & } 2>/dev/null
-
 # ============================================================================
 # fnm - Lazy Loaded (only initializes when you first use node/npm/etc)
 # ============================================================================
