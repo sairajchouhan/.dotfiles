@@ -42,7 +42,6 @@ gh pr create --web --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-
 """]
 
 [git]
-push-new-bookmarks = true
 private-commits = "description(glob:'private:*')"
 
 [revset-aliases]
@@ -55,3 +54,6 @@ private-commits = "description(glob:'private:*')"
 "format_timestamp(timestamp)" = "timestamp.local().format('%d/%m/%Y - %H:%M:%S')"
 # 'format_short_signature(signature)' = 'signature.email().local()'
 'format_short_change_id(id)' = 'id.shortest()'
+
+[remotes.origin]
+auto-track-bookmarks = "*"

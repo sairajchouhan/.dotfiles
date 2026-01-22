@@ -19,12 +19,7 @@
                                         "key_down_order": "insensitive"
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_option" }],
                                 "type": "basic"
                             },
                             {
@@ -39,12 +34,7 @@
                                         "key_down_order": "insensitive"
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_option" }],
                                 "type": "basic"
                             }
                         ]
@@ -63,12 +53,7 @@
                                         "key_down_order": "insensitive"
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             },
                             {
@@ -82,12 +67,7 @@
                                         "key_down_order": "insensitive"
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
+                                "to": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             }
                         ]

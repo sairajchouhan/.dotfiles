@@ -8,7 +8,12 @@ lazygit = "0.54.2"
 zoxide = "0.9.8"
 hyperfine = "1.19.0"
 "npm:@antfu/ni" = "25.0.0"
+delta = "0.18.2"
+starship = "1.24.2"
+watchexec = "2.3.2"
 go = "latest"
+node = "lts"
 
 [settings]
-idiomatic_version_file_enable_tools = []
+auto_install = true
+idiomatic_version_file_enable_tools = ["node"]

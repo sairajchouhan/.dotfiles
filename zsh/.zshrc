@@ -4,7 +4,7 @@
 # Key optimizations:
 # 1. Cached eval outputs (no subprocess spawning on every shell start)
 # 2. Zinit turbo mode (deferred plugin loading)
-# 3. Lazy-loaded fnm (only loads when node/npm/npx are first called)
+# 3. mise handles Node.js (and other runtimes)
 # 4. Instant prompt support
 # ============================================================================
 
@@ -92,7 +92,7 @@ alias s="source ~/.zshrc"
 alias n="nvim"
 alias c="clear"
 alias l="eza -l --icons --all"
-alias x="bunx"
+alias d="lumen diff"
 
 alias ls="eza"
 alias cs="cd ~/cs"
@@ -201,30 +201,7 @@ zsh-rebuild-cache() {
 [[ -f "$ZSH_CACHE_DIR/mise.zsh" ]] && source "$ZSH_CACHE_DIR/mise.zsh"
 [[ -f "$ZSH_CACHE_DIR/fzf.zsh" ]] && source "$ZSH_CACHE_DIR/fzf.zsh"
 [[ -f "$ZSH_CACHE_DIR/zoxide.zsh" ]] && source "$ZSH_CACHE_DIR/zoxide.zsh"
-[[ -f "$ZSH_CACHE_DIR/starship.zsh" ]] && source "$ZSH_CACHE_DIR/starship.zsh"
-
-# ============================================================================
-# fnm - Lazy Loaded (only initializes when you first use node/npm/etc)
-# ============================================================================
-# This saves ~1-2 seconds on every shell start if you're not using Node
-
-_fnm_lazy_load() {
-  # Remove the lazy-load hooks
-  unfunction node npm npx yarn pnpm corepack 2>/dev/null
-
-  # Initialize fnm for real
-  if command -v fnm >/dev/null; then
-    eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
-  fi
-
-  # Now run the original command
-  "$@"
-}
-
-# Create placeholder functions that trigger lazy loading
-for cmd in node npm npx yarn pnpm corepack; do
-  eval "${cmd}() { _fnm_lazy_load ${cmd} \"\$@\" }"
-done
+# [[ -f "$ZSH_CACHE_DIR/starship.zsh" ]] && source "$ZSH_CACHE_DIR/starship.zsh"
 
 # ============================================================================
 # Environment Variables
@@ -327,3 +304,8 @@ if [[ ! -f "$ZSH_CACHE_DIR/starship.zsh" ]]; then
   command -v fzf >/dev/null && eval "$(fzf --zsh)"
   command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 fi
+
+# opencode
+export PATH=/Users/sairaj.chouhan/.opencode/bin:$PATH
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
