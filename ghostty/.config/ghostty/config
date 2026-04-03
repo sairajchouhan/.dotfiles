@@ -1,12 +1,12 @@
 font-family = JetBrainsMono Nerd Font
 font-size = 18
-background = 000000 
-theme = Gruvbox Dark Hard
+theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
 macos-titlebar-style = tabs
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
-background-opacity = 0.85
-background-blur-radius = 20
-
+command = /opt/homebrew/bin/fish
 keybind = super+shift+r=prompt_surface_title
+
+
+# keybind = global:ctrl+grave_accent=toggle_quick_terminal
+# background-opacity = 0.85
+# background-blur-radius = 20
 # keybind = global:shift+ctrl+cmd+opt+t=toggle_quick_terminal
-# command = /opt/homebrew/bin/fish

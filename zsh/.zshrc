@@ -249,6 +249,7 @@ path=(
   "$HOME/.amp/bin"
   "$HOME/.opencode/bin"
   "$HOME/.antigravity/antigravity/bin"
+  "$HOME/.orbstack/bin"
   "$HOME/mine/bin"
   "$GOPATH/bin"
   "/Applications/WebStorm.app/Contents/MacOS"
@@ -309,3 +310,11 @@ fi
 export PATH=/Users/sairaj.chouhan/.opencode/bin:$PATH
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
 
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=/usr/local/mongodb5/bin:$PATH

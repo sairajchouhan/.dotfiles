@@ -20,16 +20,8 @@
     rebase = false
 
 [user]
-    email = sairaj2119@gmail.com
+    email = mail@sairaj.me
     name = Sairaj Chouhan
-
-[credential "https://github.com"]
-    helper = 
-    helper = !/opt/homebrew/bin/gh auth git-credential
-
-[credential "https://gist.github.com"]
-    helper = 
-    helper = !/opt/homebrew/bin/gh auth git-credential
 
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -46,4 +38,7 @@
 	cmd = "cursor --wait --merge $REMOTE $LOCAL $BASE $MERGED"
 
 [coderabbit]
-	machineId = cli/46afc33ba21548b3ac98f0927445c502
+  machineId = cli/46afc33ba21548b3ac98f0927445c502
+
+[includeIf "gitdir:/Users/sairaj.chouhan/cs/"]
+  path = ~/.gitconfig-cs

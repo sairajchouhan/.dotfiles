@@ -2,7 +2,6 @@
 *.raj
 *.raj.ts
 .nvim/
-raj/
 .raj/
 temp.ts
 .lazy.lua

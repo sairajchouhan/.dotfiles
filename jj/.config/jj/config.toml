@@ -43,6 +43,7 @@ gh pr create --web --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-
 
 [git]
 private-commits = "description(glob:'private:*')"
+auto-local-bookmark = false
 
 [revset-aliases]
 'default()' = 'coalesce(trunk(),root())::present(@) | ancestors(visible_heads() & recent(), 4)'
@@ -56,4 +57,4 @@ private-commits = "description(glob:'private:*')"
 'format_short_change_id(id)' = 'id.shortest()'
 
 [remotes.origin]
-auto-track-bookmarks = "*"
+auto-track-bookmarks = '~glob:"*"'
