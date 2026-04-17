@@ -21,23 +21,3 @@ vim.g.fff = {
 	}
 }
 
-vim.keymap.set(
-	'n',
-	'<leader>ff',
-	function() require('fff').find_files() end,
-	{ desc = 'FFFind files' }
-)
-
-
-vim.keymap.set(
-	'n',
-	'<leader>fg',
-	function()
-		require('fff').live_grep({
-			grep = {
-				modes = { 'plain', 'regex', 'fuzzy' },
-			}
-		})
-	end,
-	{ desc = 'FFFind files' }
-)
