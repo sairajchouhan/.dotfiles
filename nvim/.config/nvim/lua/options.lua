@@ -15,3 +15,5 @@ vim.o.signcolumn = 'yes' -- make lsp warnings not widen the gutter
 vim.o.winborder = "rounded"
 
 vim.o.scrolloff = 10
+
+

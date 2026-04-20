@@ -9,7 +9,7 @@ require("keymaps")
 require("autocmds")
 require("plugins.fff")
 
--- require('vim._core.ui2').enable({})
+require('vim._core.ui2').enable({})
 
 -- Plugins
 -- Pack guide: https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack#update
@@ -41,12 +41,13 @@ require("plugins.theme")
 
 -- Treesitter
 vim.cmd('syntax off') -- Make it obvious if treesitter is missing
-require("plugins.treesitter")
-
+vim.api.nvim_create_autocmd('FileType', {
+	callback = function() pcall(vim.treesitter.start) end,
+})
 -- LSP
-require("plugins.lsp")
+require("lsp")
 
-require("plugins.completion")
+require("completion")
 
 -- Neoscroll
 require('neoscroll').setup({
