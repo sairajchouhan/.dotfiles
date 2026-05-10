@@ -1,4 +1,6 @@
 require('kanagawa').setup({
+	theme = "wave",
+	background = { dark = "wave", light = "lotus" },
 	colors = {
 		theme = {
 			all = {
@@ -18,4 +20,4 @@ require('kanagawa').setup({
 	end,
 })
 
-vim.cmd('colorscheme kanagawa-wave')
+vim.cmd('colorscheme kanagawa')

@@ -1,34 +1,28 @@
-git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never
-
+# Ayu Light theme overrides — layered over config.yml via LG_CONFIG_FILE
+# when macOS is in light mode (see fish function `lazygit`)
 gui:
-  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
-      - "#FF8F40"
+      - "#FA8D3E"
       - "bold"
     inactiveBorderColor:
-      - "#95E6CB"
+      - "#4CBF99"
     searchingActiveBorderColor:
-      - "#FF8F40"
+      - "#FA8D3E"
       - "bold"
     optionsTextColor:
-      - "#59C2FF"
+      - "#399EE6"
     selectedLineBgColor:
-      - "#131721"
+      - "#E7EAED"
     cherryPickedCommitFgColor:
-      - "#D2A6FF"
+      - "#A37ACC"
     cherryPickedCommitBgColor:
-      - "#95E6CB"
+      - "#4CBF99"
     markedBaseCommitFgColor:
-      - "#59C2FF"
+      - "#399EE6"
     markedBaseCommitBgColor:
-      - "#E6B450"
+      - "#F2AE49"
     unstagedChangesColor:
-      - "#F07178"
+      - "#F07171"
     defaultFgColor:
-      - "#BFBDB6"
-
-notARepository: "quit"
+      - "#5C6166"

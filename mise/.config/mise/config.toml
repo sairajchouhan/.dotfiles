@@ -11,8 +11,15 @@ hyperfine = "1.19.0"
 delta = "0.18.2"
 starship = "1.24.2"
 watchexec = "2.3.2"
-go = "latest"
-node = "lts"
+go = "1.26.4"
+node = "24.16.0"
+"cargo:tokei" = "14.0.0"
+dust = "1.2.4"
+fastfetch = "2.63.1"
+jjui = "0.10.6"
+lazydocker = "0.25.2"
+uv = "0.11.18"
+tree-sitter = "0.26.9"
 
 [settings]
 auto_install = true

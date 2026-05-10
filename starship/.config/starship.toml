@@ -14,20 +14,20 @@ $character"""
 format = ''
 
 [directory]
-style = "blue"
+style = "#59C2FF"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[❯](#FFB454)"
+error_symbol = "[❯](#F07178)"
+vimcmd_symbol = "[❮](#AAD94C)"
 
 [cmd_duration]
 format = "[$duration]($style) "
-style = "yellow"
+style = "#E6B450"
 
 [python]
 format = "[$virtualenv]($style) "
-style = "bright-black"
+style = "#5A6378"
 detect_extensions = []
 detect_files = []
 

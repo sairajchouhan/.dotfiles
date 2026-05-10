@@ -1,3 +1,7 @@
 .DS_Store
 state.yml
 tmux/.config/tmux/plugins
+zsh/.zcompdump
+zsh/.zshrc.bak
+jj/.config/jj/repos/
+karabiner/.config/karabiner/automatic_backups/

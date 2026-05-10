@@ -1,12 +1,21 @@
+command = /bin/zsh
 font-family = JetBrainsMono Nerd Font
 font-size = 18
-theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
+# theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
+theme = light:GitHub Light Default,dark:Ayu
 macos-titlebar-style = tabs
-command = /opt/homebrew/bin/fish
 keybind = super+shift+r=prompt_surface_title
 
 
-# keybind = global:ctrl+grave_accent=toggle_quick_terminal
+keybind = global:ctrl+\=toggle_quick_terminal
+quick-terminal-animation-duration = 0
+quick-terminal-size = 70%
 # background-opacity = 0.85
 # background-blur-radius = 20
 # keybind = global:shift+ctrl+cmd+opt+t=toggle_quick_terminal
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+background-opacity = 1.00

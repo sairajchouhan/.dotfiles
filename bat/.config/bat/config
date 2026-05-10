@@ -1,1 +1,3 @@
---theme="gruvbox-dark"
+--theme=auto
+--theme-dark=ayu-dark
+--theme-light=ayu-light

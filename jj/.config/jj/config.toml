@@ -4,16 +4,16 @@
 name = "Sairaj Chouhan"
 
 [[--scope]]
+--when.repositories = ["~"]
+[--scope.user]
+email = "mail@sairaj.me"
+
+[[--scope]]
 --when.repositories = ["~/cs"]
 [--scope.user]
 email = "sairaj.chouhan@contentstack.com"
 [--scope.template-aliases]
 'format_short_signature(signature)' = 'signature.email().local()'
-
-[[--scope]]
---when.repositories = ["~/mine", "~"]
-[--scope.user]
-email = "mail@sairaj.me"
 
 [ui]
 pager = ["delta"]
@@ -43,7 +43,6 @@ gh pr create --web --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-
 
 [git]
 private-commits = "description(glob:'private:*')"
-auto-local-bookmark = false
 
 [revset-aliases]
 'default()' = 'coalesce(trunk(),root())::present(@) | ancestors(visible_heads() & recent(), 4)'
