@@ -16,7 +16,7 @@ email = "sairaj.chouhan@contentstack.com"
 'format_short_signature(signature)' = 'signature.email().local()'
 
 [ui]
-pager = ["delta"]
+pager = ["delta-auto"]
 diff-formatter = ":git"
 diff-editor = ":builtin"
 default-command = ["log-recent", "--no-pager", "--limit=7"]

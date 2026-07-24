@@ -1,16 +1,16 @@
 [core]
-    pager = delta
+    pager = delta-auto
 	excludesfile = /Users/sairaj.chouhan/.config/git/ignore
 
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta-auto --color-only
 
-# this is not just git delta config but whole of delta config
+# this is not just git delta config but whole of delta config.
+# light/dark + syntax-theme are set per-invocation by the `delta-auto` wrapper
+# (~/.local/bin/delta-auto) based on macOS system appearance.
 [delta]
     navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     line-numbers = false
-    syntax-theme = "tokyonight_night"
 
 [push]
     autoSetupRemote = true

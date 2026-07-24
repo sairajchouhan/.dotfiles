@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Route delta through the macOS system appearance so diffs match light/dark.
+# `defaults read` succeeds only in Dark mode; errors (non-zero) in Light.
+# These CLI flags override whatever light/syntax-theme is set in gitconfig.
+if defaults read -g AppleInterfaceStyle >/dev/null 2>&1; then
+  exec delta --dark --syntax-theme ayu-dark "$@"
+else
+  exec delta --light --syntax-theme ayu-light "$@"
+fi

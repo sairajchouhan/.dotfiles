@@ -1,0 +1,15 @@
+[ui.theme]
+dark = "base16-ayu-dark"
+light = "base16-ayu-light"
+
+
+[preview]
+revision_command = ["util", "exec", "--", "bash", "-c", "jj show --color always --git -r $change_id | delta-auto --paging=never"]
+diff_command = ["util", "exec", "--", "bash", "-c", "jj diff --color always --git -r $change_id | delta-auto --paging=never"]
+width_percentage = 75
+
+# oplog_command = ["util", "exec", "--", "bash", "-c", "jj op show $operation_id --git --color always | delta-auto --paging=never"]
+# file_command = ["util", "exec", "--", "bash", "-c", "jj diff --color always --git -r $change_id $file | delta-auto --paging=never"]
+
+[custom_commands]
+"create pr" = { key = ["ctrl+p"], args = ["pr"], show = "interactive" }
